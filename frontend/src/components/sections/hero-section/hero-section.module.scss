@@ -63,3 +63,17 @@
 .first-btn {
   margin-right: 14px;
 }
+
+.swipe-wrapper {
+  display: flex;
+  width: 100%;
+  margin-top: 115px;
+  .swipe-text {
+    margin-left: 16px;
+    font-family: 'Poppins-Regular', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 24px;
+    color: $text-grey;
+  }
+}

@@ -5,6 +5,7 @@ import FC from '~/types/fc'
 import { HeroType } from '~/types/hero.type'
 import SButton from '~/components/ui/general/button/button.component'
 import WorkIcon from '~/assets/icons/hero/work-icon.svg'
+import ScrollIcon from '~/assets/icons/hero/scroll-icon.svg'
 
 import styles from './hero-section.module.scss'
 import Img from 'gatsby-image'
@@ -32,6 +33,10 @@ const HeroSection: FC<Props> = ({ heroes }) => {
           <SButton variant="secondary">
             <WorkIcon />
           </SButton>
+        </div>
+        <div className={styles.swipeWrapper}>
+          <ScrollIcon />
+          <p className={styles.swipeText}>Swipe to explore</p>
         </div>
         <div className={styles.imageWrapper}>
           <Img
