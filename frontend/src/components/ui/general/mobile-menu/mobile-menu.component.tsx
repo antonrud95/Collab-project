@@ -6,10 +6,10 @@ import Logo from '~/components/ui/general/logo/logo.component'
 
 import FC from '~/types/fc'
 
-import CloseIcon from '~/assets/icons/menu-close-icon.svg'
+import CloseIcon from '~/assets/icons/close-dark-icon.svg'
+import SearchDarkIcon from '~/assets/icons/hero/search-dark.svg'
 
 import styles from './mobile-menu.module.scss'
-import Button from '~/components/ui/general/button/button.component'
 
 interface Props {
   isShown: boolean
@@ -24,22 +24,23 @@ const MobileMenu: FC<Props> = ({ isShown, toggle }) => {
   return (
     <div className={isShown ? shownClass : styles.root}>
       <Container style={{ padding: 0 }}>
-        <Logo />
         <CloseIcon onClick={closeClickHandler} />
+        <Logo />
+        <SearchDarkIcon />
       </Container>
       <Container className={styles.linkBlock}>
         <Link to="/" className={styles.link}>
-          Nav Item #1
+          Features
         </Link>
         <Link to="/" className={styles.link}>
-          Nav Item #2
+          Pricing
         </Link>
         <Link to="/" className={styles.link}>
-          Nav Item #3
+          Tours
         </Link>
-        <Button variant={'primary'} additionalClasses={[styles.buttonRoot]}>
-          Button
-        </Button>
+        <Link to="/" className={styles.link}>
+          Explore
+        </Link>
       </Container>
     </div>
   )

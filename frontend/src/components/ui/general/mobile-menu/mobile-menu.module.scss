@@ -20,32 +20,27 @@
 }
 
 .link {
-  font-family: 'Arial', sans-serif;
-  color: $primary;
-  font-size: 24px;
-  margin: 0 1.5rem;
-  padding-bottom: $p-xxl;
-  border-bottom: 2px solid transparent;
+  position: relative;
+  font-family: 'Poppins-Medium', sans-serif;
+  color: $text-grey;
+  font-size: 26px;
+  line-height: 65px;
   transition: all 0.3s ease-in-out;
+  &:hover:after {
+    content: '';
+    display: block;
+    width: 32px !important;
+    height: 32px !important;
+    border-radius: 50%;
+    background-color: $yellow-balls;
+    position: absolute;
+    right: -16px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: -1;
+  }
   &:hover {
-    color: $primary;
+    color: $text-dark;
   }
 }
-.button-wrapper {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-.button-block {
-  display: flex;
-  flex-direction: column;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-}
-.button-root {
-  background-color: #464073 !important;
-}
-.semicircles {
-  margin-top: 90px;
-}
+

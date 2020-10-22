@@ -7,7 +7,8 @@ import Logo from '~/components/ui/general/logo/logo.component'
 import MobileMenu from '~/components/ui/general/mobile-menu/mobile-menu.component'
 import Button from '~/components/ui/general/button/button.component'
 
-import DarkMenuOpenIcon from '~/assets/icons/menu-open-icon-dark.svg'
+import DarkMenuOpenIcon from '~/assets/icons/burger-icon.svg'
+import SearchIconDark from '~/assets/icons/hero/search-dark.svg'
 
 import styles from './navbar.module.scss'
 
@@ -24,11 +25,12 @@ const SNavbar = () => {
       className={classnames(styles.navbar, styles.navbar__onLight)}
     >
       <Container>
-        <Logo />
         <DarkMenuOpenIcon
           className={styles.openIcon}
           onClick={openClickHandler}
         />
+        <Logo />
+        <SearchIconDark />
 
         <Nav className={classnames(styles.nav, 'mr-4', 'ml-auto')}>
           <Link to="/" className={styles.navLink}>
