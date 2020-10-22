@@ -1,8 +1,8 @@
 @import 'mixins';
 
 .container {
-  padding-left: 15px !important;
-  padding-right: 15px !important;
+  padding-left: 32px !important;
+  padding-right: 32px !important;
   @media (min-width: 1200px) {
     max-width: 1200px;
   }

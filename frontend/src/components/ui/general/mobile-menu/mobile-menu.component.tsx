@@ -2,6 +2,9 @@ import React from 'react'
 import { Container } from 'react-bootstrap'
 import { Link } from 'gatsby'
 
+import { graphql, useStaticQuery } from 'gatsby'
+import Img from 'gatsby-image'
+
 import Logo from '~/components/ui/general/logo/logo.component'
 
 import FC from '~/types/fc'
@@ -21,6 +24,19 @@ const MobileMenu: FC<Props> = ({ isShown, toggle }) => {
   const closeClickHandler = () => {
     toggle(false)
   }
+  const data = useStaticQuery(graphql`
+    query {
+      monitorMobile: file(
+        relativePath: { eq: "images/hero/mobile-hero-img.png" }
+      ) {
+        childImageSharp {
+          fluid(maxWidth: 375) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `)
   return (
     <div className={isShown ? shownClass : styles.root}>
       <Container style={{ padding: 0 }}>
@@ -41,6 +57,12 @@ const MobileMenu: FC<Props> = ({ isShown, toggle }) => {
         <Link to="/" className={styles.link}>
           Explore
         </Link>
+      </Container>
+      <Container>
+        <Img
+          fluid={data.monitorMobile.childImageSharp.fluid}
+          className={styles.mobileImg}
+        />
       </Container>
     </div>
   )

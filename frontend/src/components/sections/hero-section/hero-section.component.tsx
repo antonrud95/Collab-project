@@ -3,6 +3,8 @@ import { Container } from 'react-bootstrap'
 import DescriptionComponent from '~/components/ui/general/description/description.component'
 import FC from '~/types/fc'
 import { HeroType } from '~/types/hero.type'
+import SButton from '~/components/ui/general/button/button.component'
+import WorkIcon from '~/assets/icons/hero/work-icon.svg'
 
 import styles from './hero-section.module.scss'
 import Img from 'gatsby-image'
@@ -23,6 +25,14 @@ const HeroSection: FC<Props> = ({ heroes }) => {
           titleClassname={styles.descriptionTitle}
           textClassname={styles.descriptionText}
         />
+        <div className={styles.buttonWrapper}>
+          <SButton variant="primary" className={styles.firstBtn}>
+            Get started
+          </SButton>
+          <SButton variant="secondary">
+            <WorkIcon />
+          </SButton>
+        </div>
         <div className={styles.imageWrapper}>
           <Img
             fluid={heroes[0].image.childImageSharp.fluid}
