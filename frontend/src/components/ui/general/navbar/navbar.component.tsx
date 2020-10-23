@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Container, Navbar, Nav } from 'react-bootstrap'
 import { Link } from 'gatsby'
 import classnames from 'classnames'
+import { useScrollPosition } from '@n8tb1t/use-scroll-position'
 
 import Logo from '~/components/ui/general/logo/logo.component'
 import MobileMenu from '~/components/ui/general/mobile-menu/mobile-menu.component'
@@ -14,6 +15,18 @@ import styles from './navbar.module.scss'
 
 const SNavbar = () => {
   const [isMenuShown, toggleMenu] = useState(false)
+  const [isOnTop, setOnTop] = useState(true)
+
+  useScrollPosition(
+    ({ prevPos, currPos }) => {
+      if (currPos.y >= -50) {
+        setOnTop(true)
+      } else {
+        setOnTop(false)
+      }
+    },
+    [isOnTop]
+  )
 
   const openClickHandler = () => {
     toggleMenu(true)
@@ -22,7 +35,11 @@ const SNavbar = () => {
   return (
     <Navbar
       fixed="top"
-      className={classnames(styles.navbar, styles.navbar__onLight)}
+      className={
+        !isOnTop
+          ? classnames(styles.navbar, styles.navbar__onLight)
+          : styles.navbar
+      }
     >
       <Container>
         <DarkMenuOpenIcon

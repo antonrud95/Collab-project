@@ -1,6 +1,11 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import { Container } from 'react-bootstrap'
 import { Link } from 'gatsby'
+import {
+  disableBodyScroll,
+  enableBodyScroll,
+  clearAllBodyScrollLocks,
+} from 'body-scroll-lock'
 
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
@@ -21,7 +26,15 @@ interface Props {
 
 const MobileMenu: FC<Props> = ({ isShown, toggle }) => {
   const shownClass = [styles.root, styles.root__shown].join(' ')
-  const closeClickHandler = () => {
+  const menuRef = useRef(null)
+  useEffect(() => {
+    isShown ? disableBodyScroll(menuRef.current) : clearAllBodyScrollLocks()
+  }, [isShown])
+
+  const closeClickHandler = (e) => {
+    e.preventDefault()
+    enableBodyScroll(menuRef.current)
+    clearAllBodyScrollLocks()
     toggle(false)
   }
   const data = useStaticQuery(graphql`
@@ -38,7 +51,7 @@ const MobileMenu: FC<Props> = ({ isShown, toggle }) => {
     }
   `)
   return (
-    <div className={isShown ? shownClass : styles.root}>
+    <div className={isShown ? shownClass : styles.root} ref={menuRef}>
       <Container style={{ padding: 0 }}>
         <CloseIcon onClick={closeClickHandler} />
         <Logo />
