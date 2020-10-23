@@ -16,35 +16,37 @@ interface Props {
 
 const HeroSection: FC<Props> = ({ heroes }) => {
   return (
-    <Container>
-      <div className={styles.heroBlock}>
-        <DescriptionComponent
-          key={heroes[0].id}
-          title={heroes[0].title}
-          description={heroes[0].subtitle}
-          descriptionComponentWrapper={styles.descriptionComponent}
-          titleClassname={styles.descriptionTitle}
-          textClassname={styles.descriptionText}
-        />
-        <div className={styles.buttonWrapper}>
-          <SButton variant="primary" className={styles.firstBtn}>
-            Get started
-          </SButton>
-          <SButton variant="secondary">
-            <WorkIcon />
-          </SButton>
-        </div>
-        <div className={styles.swipeWrapper}>
-          <ScrollIcon />
-          <p className={styles.swipeText}>Swipe to explore</p>
-        </div>
-        <div className={styles.imageWrapper}>
-          <Img
-            fluid={heroes[0].image.childImageSharp.fluid}
-            className={styles.headerImg}
+    <Container fluid className={styles.containerOuter}>
+      <Container className={styles.heroContainer}>
+        <div className={styles.heroBlock}>
+          <DescriptionComponent
+            key={heroes[0].id}
+            title={heroes[0].title}
+            description={heroes[0].subtitle}
+            descriptionComponentWrapper={styles.descriptionComponent}
+            titleClassname={styles.descriptionTitle}
+            textClassname={styles.descriptionText}
           />
+          <div className={styles.buttonWrapper}>
+            <SButton variant="primary" className={styles.firstBtn}>
+              Get started
+            </SButton>
+            <SButton variant="secondary">
+              <WorkIcon />
+            </SButton>
+          </div>
+          <div className={styles.swipeWrapper}>
+            <ScrollIcon />
+            <p className={styles.swipeText}>Swipe to explore</p>
+          </div>
+          <div className={styles.imageWrapper}>
+            <Img
+              fluid={heroes[0].image.childImageSharp.fluid}
+              className={styles.headerImg}
+            />
+          </div>
         </div>
-      </div>
+      </Container>
     </Container>
   )
 }
