@@ -16,24 +16,20 @@
   padding-right: 46px;
   white-space: nowrap;
   cursor: pointer;
-  &:hover {
-    transform: scale(1.05) !important;
-  }
   &:focus {
     box-shadow: none !important;
-  }
-  &:active {
-    transform: scale(0.95) !important;
   }
 }
 .primary {
   background-color: $primary;
+  border-radius: 20px;
   &:hover {
     background-color: #353057;
   }
 }
 .secondary {
   color: $primary;
+  border-radius: 20px;
   background-color: transparent;
   padding: 24px !important;
   border: 1px solid #e3e6e9;
@@ -47,5 +43,17 @@
     color: $primary !important;
     background-color: transparent !important;
     border: 2px solid $primary !important;
+  }
+}
+.hero {
+  color: $text-hero-btn;
+  background-color: $pink-balls;
+  padding: 24px 47px!important;
+  letter-spacing: -0.04em;
+  border-radius: 20px;
+  border: none;
+  &:hover {
+    background-color: $text-hero-btn;
+    color: $pink-balls;
   }
 }

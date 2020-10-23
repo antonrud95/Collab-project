@@ -5,8 +5,12 @@
   padding-right: 32px !important;
   max-width: 100% !important;
   @media (min-width: 768px) {
-    padding-left: 0px !important;
-    padding-right: 0px !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+  @media (min-width: 1024px) {
+    padding-left: 72px !important;
+    padding-right: 72px !important;
   }
   @media (min-width: 1200px) {
     max-width: 1200px;

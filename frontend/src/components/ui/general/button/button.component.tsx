@@ -7,7 +7,7 @@ import FC from '~/types/fc'
 import styles from './button.module.scss'
 
 interface Props {
-  variant: 'primary' | 'secondary'
+  variant: 'primary' | 'secondary' | 'hero'
   type?: 'button' | 'submit' | 'reset'
   children: ReactNode
   additionalClasses?: string[]
@@ -29,6 +29,9 @@ const SButton: FC<Props> = ({
       break
     case 'secondary':
       variantStyles = styles.secondary
+      break
+    case 'hero':
+      variantStyles = styles.hero
       break
     default:
       break

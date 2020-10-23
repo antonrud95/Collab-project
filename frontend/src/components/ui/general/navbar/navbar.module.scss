@@ -15,16 +15,16 @@
   }
 }
 .nav-link {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Poppins-Medium', sans-serif;
   font-size: 16px;
-  color: $primary;
+  line-height: 30px;
+  color: $text-grey !important;
   margin: 0 1.5rem;
   padding: 0.25rem 0;
   border-bottom: 2px solid transparent;
-  transition: all 0.3s ease-in-out;
   &:hover {
     border-bottom: 2px solid $primary;
-    color: $primary;
+    color: $text-dark !important;
   }
 }
 .open-icon {
@@ -32,5 +32,12 @@
   @include breakpoint('tablet') {
     display: none;
   }
+}
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 36px !important;
 }
 

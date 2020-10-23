@@ -3,6 +3,7 @@ import { Container, Navbar, Nav } from 'react-bootstrap'
 import { Link } from 'gatsby'
 import classnames from 'classnames'
 import { useScrollPosition } from '@n8tb1t/use-scroll-position'
+import { useWindowDimensions } from '~/helpers/useWindowDimensions.helper'
 
 import Logo from '~/components/ui/general/logo/logo.component'
 import MobileMenu from '~/components/ui/general/mobile-menu/mobile-menu.component'
@@ -10,10 +11,12 @@ import Button from '~/components/ui/general/button/button.component'
 
 import DarkMenuOpenIcon from '~/assets/icons/burger-icon.svg'
 import SearchIconDark from '~/assets/icons/hero/search-dark.svg'
+import SearchIconLight from '~/assets/icons/hero/search-light.svg'
 
 import styles from './navbar.module.scss'
 
 const SNavbar = () => {
+  const { width } = useWindowDimensions()
   const [isMenuShown, toggleMenu] = useState(false)
   const [isOnTop, setOnTop] = useState(true)
 
@@ -41,29 +44,33 @@ const SNavbar = () => {
           : styles.navbar
       }
     >
-      <Container>
+      <div className={styles.navbarContainer}>
         <DarkMenuOpenIcon
           className={styles.openIcon}
           onClick={openClickHandler}
         />
         <Logo />
-        <SearchIconDark />
+        {width < 992 && <SearchIconDark />}
 
-        <Nav className={classnames(styles.nav, 'mr-4', 'ml-auto')}>
+        <Nav className={classnames(styles.nav, 'mr-4')}>
           <Link to="/" className={styles.navLink}>
-            Nav Item #1
+            Features
           </Link>
           <Link to="/" className={styles.navLink}>
-            Nav Item #2
+            Pricing
           </Link>
           <Link to="/" className={styles.navLink}>
-            Nav Item #3
+            Tours
+          </Link>
+          <Link to="/" className={styles.navLink}>
+            Explore
           </Link>
         </Nav>
+        {width > 991 && <SearchIconDark />}
         <Nav className={styles.nav}>
-          <Button variant={'primary'}>Button</Button>
+          <Button variant="hero">Get started</Button>
         </Nav>
-      </Container>
+      </div>
       <MobileMenu isShown={isMenuShown} toggle={toggleMenu} />
     </Navbar>
   )
