@@ -9,28 +9,38 @@
   align-items: center;
 }
 .image-wrapper {
-  width: 350px !important;
+  width: 403px !important;
 }
 .description-title {
-  // position: relative;
+  position: relative;
   font-family: 'DMSans-Medium', sans-serif;
   font-weight: 500;
   font-size: 62px;
   line-height: 62px;
   color: $text-dark;
   text-transform: capitalize;
-  width: 65%;
+  max-width: 205px;
   margin-bottom: 48px;
-  // &:after {
-  //   content: '';
-  //   position: absolute;
-  //   width: 7px;
-  //   height: 7px;
-  //   right: 5px;
-  //   bottom: 10px;
-  //   border-radius: 50%;
-  //   background-color: $primary;
-  // }
+  &:before {
+    content: '';
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    right: -35px;
+    bottom: 70px;
+    border-radius: 50%;
+    background-color: $yellow-balls;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    right: 5px;
+    bottom: 10px;
+    border-radius: 50%;
+    background-color: $primary;
+  }
   @include breakpoint('mobile') {
     font-family: 'DMSans-Bold', sans-serif;
     font-weight: 700;
@@ -39,6 +49,7 @@
   }
 }
 .description-text {
+  position: relative;
   font-family: 'Poppins-Regular', sans-serif;
   font-weight: 400;
   font-size: 16px;
@@ -46,6 +57,16 @@
   color: $text-grey;
   width: 70%;
   margin-bottom: 48px;
+  &:after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    right: -100px;
+    top: 0;
+    border-radius: 50%;
+    background-color: $primary;
+  }
   @include breakpoint('mobile') {
     font-size: 18px;
     line-height: 27px;
@@ -64,6 +85,7 @@
   display: flex;
   width: 100%;
   margin-top: 115px;
+  position: relative;
   .swipe-text {
     margin-left: 16px;
     font-family: 'Poppins-Regular', sans-serif;
@@ -71,6 +93,16 @@
     font-size: 15px;
     line-height: 24px;
     color: $text-grey;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    right: -110px;
+    top: -50px;
+    border-radius: 50%;
+    background-color: $pink-balls;
   }
 }
 
@@ -82,6 +114,7 @@
   overflow: hidden !important;
 }
 .description-component {
+  width: 100% !important;
   &:after {
     content: '';
     position: absolute;
