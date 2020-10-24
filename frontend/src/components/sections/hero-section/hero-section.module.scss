@@ -9,6 +9,7 @@
   align-items: center;
   @include breakpoint('tablet') {
     padding-top: 221px;
+    padding-bottom: 100px;
   }
 }
 .hero-content {
@@ -33,12 +34,38 @@
       background-color: $yellow-balls;
     }
   }
+  @include breakpoint('desktop') {
+    width: 780px;
+    &:before {
+      left: 95px;
+      top: 10px;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      right: -10px;
+      bottom: -35px;
+      border-radius: 50%;
+      z-index: 10;
+      background-color: $white-text;
+    }
+  }
 }
 .header-img {
   width: 403px !important;
   @include breakpoint('tablet') {
     width: 717px !important;
     margin: 20px 0 0 110px;
+  }
+  @include breakpoint('desktop') {
+    width: 850px !important;
+    margin: 0;
+    position: absolute;
+    left: 55px;
+    top: -20px;
+    z-index: 20 !important;
   }
 }
 .description-title {
@@ -121,6 +148,9 @@
       display: none !important;
     }
   }
+  @include breakpoint('desktop') {
+    width: 80% !important;
+  }
 }
 .button-wrapper {
   position: relative;
@@ -137,6 +167,11 @@
       border-radius: 50%;
       background-color: $primary;
       transform: translateY(-50%);
+    }
+  }
+  @include breakpoint('desktop') {
+    &:after {
+      right: 55%;
     }
   }
 }
@@ -175,10 +210,12 @@
 
 .hero-container {
   overflow: hidden !important;
+  @include breakpoint('desktop') {
+    overflow: visible !important;
+  }
 }
 .container-outer {
   position: relative !important;
-  overflow: hidden !important;
   @include breakpoint('tablet') {
     &:before {
       position: absolute;
@@ -191,41 +228,35 @@
       top: -140px;
     }
   }
+  @include breakpoint('desktop') {
+    &:before {
+      position: absolute;
+      content: '';
+      width: 400px;
+      height: 400px;
+      background-color: $yellow-balls;
+      border-radius: 50%;
+      left: -200px;
+      top: -200px;
+    }
+  }
 }
 .description-component {
   width: 100% !important;
-  &:after {
-    content: '';
-    position: absolute;
-    width: 169px;
-    height: 169px;
-    right: -85px;
-    top: 116px;
-    border-radius: 50%;
-    background-color: $primary;
-    @include breakpoint('tablet') {
-      width: 1118px;
-      height: 1118px;
-      right: -780px;
-      top: -47px;
-    }
-  }
+  position: relative;
   &:before {
     content: '';
     position: absolute;
     width: 46px;
     height: 5px;
-    left: 150px;
-    top: 288px;
+    left: 120px;
+    top: 107px;
     background-color: $primary;
     @include breakpoint('mobile') {
       width: 72px;
       height: 8px;
-      left: 200px;
-      top: 348px;
-    }
-    @include breakpoint('tablet') {
-      left: 260px;
+      left: 185px;
+      top: 168px;
     }
   }
 }

@@ -52,7 +52,7 @@ const SNavbar = () => {
         <Logo />
         {width < 992 && <SearchIconDark />}
 
-        <Nav className={classnames(styles.nav, 'mr-4')}>
+        <Nav className={classnames(styles.nav)}>
           <Link to="/" className={styles.navLink}>
             Features
           </Link>
@@ -66,9 +66,14 @@ const SNavbar = () => {
             Explore
           </Link>
         </Nav>
-        {width > 991 && <SearchIconDark />}
+        {width > 991 && width < 1200 && (
+          <SearchIconDark className={styles.searchBtn} />
+        )}
+        {width > 1199 && <SearchIconLight className={styles.searchBtn} />}
         <Nav className={styles.nav}>
-          <Button variant="hero">Get started</Button>
+          <Button variant="hero" className={styles.navbarBtn}>
+            Get started
+          </Button>
         </Nav>
       </div>
       <MobileMenu isShown={isMenuShown} toggle={toggleMenu} />

@@ -7,6 +7,9 @@ const Layout = ({ children }) => {
     <>
       <Navbar />
       <main>{children}</main>
+
+      {/* <main className="main-wrapper-container">{children}</main>
+      <div className="ornament-container"></div> */}
     </>
   )
 }

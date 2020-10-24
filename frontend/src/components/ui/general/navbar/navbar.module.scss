@@ -13,6 +13,19 @@
   @include breakpoint('tablet') {
     display: flex;
   }
+  @include breakpoint('desktop') {
+    margin-left: 35px;
+  }
+}
+.search-btn {
+  @include breakpoint('desktop') {
+    margin-left: auto !important;
+  }
+}
+.navbar-btn {
+  @include breakpoint('desktop') {
+    margin-left: 42px;
+  }
 }
 .nav-link {
   font-family: 'Poppins-Medium', sans-serif;
@@ -39,5 +52,8 @@
   align-items: center;
   width: 100%;
   padding: 0 36px !important;
+  @include breakpoint('desktop') {
+    padding: 0 100px !important;
+  }
 }
 

@@ -13,7 +13,8 @@
     padding-right: 72px !important;
   }
   @media (min-width: 1200px) {
-    max-width: 1200px;
+    padding: 0 !important;
+    max-width: 1200px !important;
   }
 }
 .container-fluid {
