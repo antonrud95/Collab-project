@@ -57,6 +57,7 @@ module.exports = {
         contentTypes: [
           // Insert list of resources
           'heroes',
+          'dropdowns',
         ],
         queryLimit: 1000,
       },
