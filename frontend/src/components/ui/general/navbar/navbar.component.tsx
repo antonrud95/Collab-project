@@ -5,6 +5,9 @@ import classnames from 'classnames'
 import { useScrollPosition } from '@n8tb1t/use-scroll-position'
 import { useWindowDimensions } from '~/helpers/useWindowDimensions.helper'
 
+import Dropdown from '~/components/ui/general/dropdown/dropdown.component'
+import { graphql, useStaticQuery } from 'gatsby'
+
 import Logo from '~/components/ui/general/logo/logo.component'
 import MobileMenu from '~/components/ui/general/mobile-menu/mobile-menu.component'
 import Button from '~/components/ui/general/button/button.component'
@@ -15,7 +18,27 @@ import SearchIconLight from '~/assets/icons/hero/search-light.svg'
 
 import styles from './navbar.module.scss'
 
+const query = graphql`
+  query {
+    allStrapiDropdowns {
+      nodes {
+        id
+        title
+        description
+        image {
+          childImageSharp {
+            fluid(quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+    }
+  }
+`
+
 const SNavbar = () => {
+  const data = useStaticQuery(query)
   const { width } = useWindowDimensions()
   const [isMenuShown, toggleMenu] = useState(false)
   const [isOnTop, setOnTop] = useState(true)
@@ -75,6 +98,7 @@ const SNavbar = () => {
             Get started
           </Button>
         </Nav>
+        <Dropdown dropdowns={data.allStrapiDropdowns.nodes} />
       </div>
       <MobileMenu isShown={isMenuShown} toggle={toggleMenu} />
     </Navbar>

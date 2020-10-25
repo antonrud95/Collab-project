@@ -2,7 +2,11 @@
 @import 'src/styles/mixins';
 
 .outer-wrapper {
+    position: absolute;
+    top: 120px;
+    left: 120px;
     border-radius: 32px;
+    background-color: $white-text;
     box-shadow: 5px 10px 40px rgba(0, 0, 0, 0.06);
     padding: 67px 0 32px 0 !important;
 }
@@ -11,6 +15,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    padding-bottom: 32px;
 }
 
 .dropdown-item-wrapper {
@@ -69,6 +74,8 @@
 }
 
 .dropdown-main-title {
+    width: 100%;
+    padding-top: 60px;
     display: flex;
     font-family: 'DMSans-Medium', sans-serif;
     font-weight: 500;

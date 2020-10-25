@@ -6,9 +6,3 @@ export interface DropdownType {
     childImageSharp: any
   }
 }
-
-// export interface Drop {
-//   allStrapiDropdowns: {
-//     nodes: DropdownType[]
-//   }
-// }
