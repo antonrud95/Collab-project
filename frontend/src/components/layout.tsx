@@ -7,7 +7,9 @@ const Layout = ({ children }) => {
     <>
       <Navbar />
       <main>{children}</main>
-      <footer className={'text-center'}>© Unikorns Gatsby Starter</footer>
+
+      {/* <main className="main-wrapper-container">{children}</main>
+      <div className="ornament-container"></div> */}
     </>
   )
 }

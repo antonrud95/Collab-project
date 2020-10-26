@@ -1,11 +1,24 @@
 @import 'mixins';
 
 .container {
-  padding-left: 15px !important;
-  padding-right: 15px !important;
-  @media (min-width: 1200px) {
-    max-width: 1200px;
+  padding-left: 32px !important;
+  padding-right: 32px !important;
+  max-width: 100% !important;
+  @media (min-width: 768px) {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
   }
+  @media (min-width: 1024px) {
+    padding-left: 72px !important;
+    padding-right: 72px !important;
+  }
+  @media (min-width: 1200px) {
+    padding: 0 !important;
+    max-width: 1200px !important;
+  }
+}
+.container-fluid {
+  padding: 0 !important;
 }
 .dropdown-toggle {
   &:after {

@@ -56,6 +56,8 @@ module.exports = {
         apiURL: GATSBY_CMS_URL,
         contentTypes: [
           // Insert list of resources
+          'heroes',
+          'dropdowns',
         ],
         queryLimit: 1000,
       },
