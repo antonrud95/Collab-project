@@ -9,11 +9,13 @@ import styles from './dropdown.module.scss'
 
 interface Props {
   dropdowns: DropdownType[]
+  isShown: boolean
 }
 
-const Dropdown: FC<Props> = ({ dropdowns }) => {
+const Dropdown: FC<Props> = ({ dropdowns, isShown }) => {
+  const shownClass = [styles.outerWrapper, styles.outerWrapper__shown].join(' ')
   return (
-    <Container className={styles.outerWrapper}>
+    <div className={isShown ? shownClass : styles.outerWrapper}>
       <div className={styles.dropdownMainTitle}>
         <p className={styles.mainTitleText}>Features</p>
         <p className={styles.mainTitleText}>Features</p>
@@ -37,7 +39,7 @@ const Dropdown: FC<Props> = ({ dropdowns }) => {
           )
         })}
       </div>
-    </Container>
+    </div>
   )
 }
 

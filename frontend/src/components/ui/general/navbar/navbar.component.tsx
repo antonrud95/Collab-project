@@ -42,6 +42,7 @@ const SNavbar = () => {
   const { width } = useWindowDimensions()
   const [isMenuShown, toggleMenu] = useState(false)
   const [isOnTop, setOnTop] = useState(true)
+  const [isDropdownShow, toggleDropdown] = useState(false)
 
   useScrollPosition(
     ({ prevPos, currPos }) => {
@@ -56,6 +57,13 @@ const SNavbar = () => {
 
   const openClickHandler = () => {
     toggleMenu(true)
+  }
+
+  const toggleDropdownHandler = () => {
+    toggleDropdown(true)
+    if (isDropdownShow === true) {
+      toggleDropdown(false)
+    }
   }
 
   return (
@@ -85,7 +93,11 @@ const SNavbar = () => {
           <Link to="/" className={styles.navLink}>
             Tours
           </Link>
-          <Link to="/" className={styles.navLink}>
+          <Link
+            to="/"
+            className={styles.navLink}
+            onClick={toggleDropdownHandler}
+          >
             Explore
           </Link>
         </Nav>
@@ -98,7 +110,10 @@ const SNavbar = () => {
             Get started
           </Button>
         </Nav>
-        <Dropdown dropdowns={data.allStrapiDropdowns.nodes} />
+        <Dropdown
+          dropdowns={data.allStrapiDropdowns.nodes}
+          isShown={isDropdownShow}
+        />
       </div>
       <MobileMenu isShown={isMenuShown} toggle={toggleMenu} />
     </Navbar>
