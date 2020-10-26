@@ -1,6 +1,13 @@
 @import 'src/styles/variables';
 @import 'src/styles/mixins';
 
+.hero-container {
+  padding-bottom: 34px;
+  @include breakpoint('tablet') {
+    padding-bottom: 0;
+  }
+}
+
 .hero-block {
   display: flex;
   padding-top: 179px;
@@ -202,20 +209,18 @@
     top: -50px;
     border-radius: 50%;
     background-color: $pink-balls;
+    @include breakpoint('tablet') {
+      display: none;
+    }
   }
   @include breakpoint('tablet') {
     margin-top: 99px;
   }
 }
 
-.hero-container {
-  overflow: hidden !important;
-  @include breakpoint('desktop') {
-    overflow: visible !important;
-  }
-}
 .container-outer {
   position: relative !important;
+  overflow: hidden !important;
   @include breakpoint('tablet') {
     &:before {
       position: absolute;
