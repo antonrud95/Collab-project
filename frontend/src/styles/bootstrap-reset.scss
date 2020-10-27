@@ -33,3 +33,33 @@
     left: -300%;
   }
 }
+
+.slick-prev {
+  left: 0 !important;
+}
+.slick-next {
+  left: 57px !important;
+}
+
+.slick-prev,
+.slick-next {
+  top: -85px !important;
+  width: 40px !important;
+  height: 40px !important;
+  opacity: 1 !important;
+  transform: translate(0) !important;
+  color: #5956E9 !important;
+  outline: none !important;
+}
+
+.slick-prev:before, 
+.slick-next:before {
+  color: #5956E9 !important;
+  opacity: 1 !important;
+  font-size: 40px !important;
+}
+.slick-prev.slick-disabled:before, 
+.slick-next.slick-disabled:before {
+  color: #5956E9 !important;
+  opacity: 0.3 !important;
+}

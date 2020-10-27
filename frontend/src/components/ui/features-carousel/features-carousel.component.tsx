@@ -14,7 +14,7 @@ const SimpleSlider: FC<Props> = ({ children }) => {
     dots: false,
     infinite: false,
     speed: 500,
-    slidesToShow: 1,
+    slidesToShow: 2,
     slidesToScroll: 1,
   }
   return <Slider {...settings}>{children}</Slider>

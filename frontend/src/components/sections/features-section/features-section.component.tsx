@@ -34,6 +34,18 @@ const FeaturesSection = () => {
       <div className={styles.featuresContainer}>
         <Container>
           <div className={styles.borderOrnament} />
+          <div className={styles.featuresHeader}>
+            <h3 className={styles.uppertitle}>Features</h3>
+            <div className={styles.mainContent}>
+              <h2 className={styles.mainContentTitle}>
+                The world’s most powerful design tool.
+              </h2>
+              <p className={styles.mainContentText}>
+                Simultaneously design, code and collaborate with your team all
+                from one place.
+              </p>
+            </div>
+          </div>
           <SimpleSlider>
             <SliderItem
               image={data.imageCamera.childImageSharp.fluid}
