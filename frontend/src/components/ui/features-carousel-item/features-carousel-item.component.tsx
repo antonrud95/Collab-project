@@ -12,6 +12,7 @@ interface Props {
   itemTextStyles?: string
   itemDescStyles?: string
   textWrapper?: string
+  cardWrapper: string
 }
 
 const SliderItem: FC<Props> = ({
@@ -24,9 +25,10 @@ const SliderItem: FC<Props> = ({
   itemTextStyles,
   itemDescStyles,
   textWrapper,
+  cardWrapper,
 }) => {
   return (
-    <div>
+    <div className={cardWrapper}>
       <div className={imgWrapper}>
         <Img fluid={image} />
       </div>

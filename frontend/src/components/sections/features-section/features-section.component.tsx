@@ -32,8 +32,10 @@ const FeaturesSection = () => {
   return (
     <React.Fragment>
       <div className={styles.featuresContainer}>
+        <div className={styles.borderOrnament} />
+        <div className={styles.spearOrnament} />
+        <div className={styles.bigBallOrnament} />
         <Container>
-          <div className={styles.borderOrnament} />
           <div className={styles.featuresHeader}>
             <h3 className={styles.uppertitle}>Features</h3>
             <div className={styles.mainContent}>
@@ -59,6 +61,7 @@ const FeaturesSection = () => {
               itemDescStyles={styles.sliderItemDesc}
               imgWrapper={styles.sliderImageWrapperCamera}
               textWrapper={styles.sliderItemTextWrapper}
+              cardWrapper={styles.sliderItemCardWrapper}
             />
             <SliderItem
               image={data.imageCalendar.childImageSharp.fluid}
@@ -72,6 +75,7 @@ const FeaturesSection = () => {
               itemDescStyles={styles.sliderItemDesc}
               imgWrapper={styles.sliderImageWrapperCalendar}
               textWrapper={styles.sliderItemTextWrapper}
+              cardWrapper={styles.sliderItemCardWrapper}
             />
             <SliderItem
               image={data.imageCalendar.childImageSharp.fluid}
@@ -85,10 +89,10 @@ const FeaturesSection = () => {
               itemDescStyles={styles.sliderItemDesc}
               imgWrapper={styles.sliderImageWrapperCalendar}
               textWrapper={styles.sliderItemTextWrapper}
+              cardWrapper={styles.sliderItemCardWrapper}
             />
           </SimpleSlider>
         </Container>
-        <div className={styles.spearOrnament} />
       </div>
       <div className={styles.ornamentContainer} />
     </React.Fragment>

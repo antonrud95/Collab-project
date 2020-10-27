@@ -50,6 +50,7 @@
   transform: translate(0) !important;
   color: #5956E9 !important;
   outline: none !important;
+  z-index: 1000 !important;
 }
 
 .slick-prev:before, 
@@ -63,3 +64,4 @@
   color: #5956E9 !important;
   opacity: 0.3 !important;
 }
+
