@@ -122,3 +122,57 @@
         opacity: .5;
     }
 }
+
+//============= Carousel-item-styles ====================
+
+.slider-image-wrapper-camera {
+    max-width: 71px;
+    min-height: 100px;
+}
+.slider-image-wrapper-calendar {
+    max-width: 62px;
+    min-height: 100px;
+}
+.slider-item-title {
+    font-family: 'DMSans-Medium', sans-serif;
+    font-size: 20px;
+    line-height: 24px;
+    color: $white-text;
+    margin-bottom: 24px;
+}
+.slider-item-text {
+    font-family: 'Poppins-Regular', sans-serif;
+    font-size: 15px;
+    line-height: 24px;
+    color: $white-text;
+    opacity: .5;
+    margin-bottom: 31px;
+    width: 80%;
+}
+.slider-item-text-wrapper {
+    position: relative;
+}
+.slider-item-desc {
+    font-family: 'Poppins-Regular', sans-serif;
+    font-size: 15px;
+    line-height: 24px;
+    color: $white-text;
+    opacity: .5;
+    margin-bottom: 0;
+    transition: 0.2s ease-in-out;
+    &:hover:before {
+        content: '';
+        width: 34px;
+        height: 1px;
+        background-color: #fff;
+        position: absolute;
+        left: 0;
+        bottom: 50%;
+        transform: translateY(-50%);
+        z-index: 1000;
+    }
+    &:hover {
+        opacity: 1;
+        margin-left: 50px;
+    }
+}
