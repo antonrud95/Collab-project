@@ -7,7 +7,10 @@ const FeaturesSection = () => {
   return (
     <React.Fragment>
       <div className={styles.featuresContainer}>
-        <Container>Some content</Container>
+        <Container>
+          <div className={styles.borderOrnament} />
+        </Container>
+        <div className={styles.spearOrnament} />
       </div>
       <div className={styles.ornamentContainer} />
     </React.Fragment>

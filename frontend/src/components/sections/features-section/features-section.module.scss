@@ -64,3 +64,61 @@
         }
     }
 }
+
+.border-ornament {
+    min-height: 520px;
+    position: relative;
+    top: 0 !important;
+    left: 0 !important;
+    overflow: hidden;
+    &:before {
+        content: '';
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        border-radius: 50%;
+        width: 520px;
+        height: 520px;
+        border: 1px solid #42424A;
+        background-color:  transparent;
+    }
+    &:after {
+        content: '';
+        position: absolute !important;
+        top: 78px !important;
+        left: 135px !important;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        background-color: #42424A;
+    }
+}
+
+.spear-ornament {
+    min-height: 520px;
+    position: relative;
+    top: 0 !important;
+    left: 0 !important;
+    &:before {
+        content: '';
+        position: absolute !important;
+        top: -25px !important;
+        left: -240px !important;
+        border-radius: 50%;
+        width: 652px;
+        height: 1px;;
+        background-color: #42424A;
+        transform: rotate(-45deg);
+    }
+    &:after {
+        content: '';
+        position: absolute !important;
+        top: 10px !important;
+        left: -45px !important;
+        border-radius: 50%;
+        width: 90px;
+        height: 90px;
+        background-color: #525260;
+        opacity: .5;
+    }
+}
