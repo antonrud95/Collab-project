@@ -5,34 +5,66 @@
 .signup-main-container {
     background-color: $grey-bg;
     position: relative;
+    padding-top: 142px;
+    padding-bottom: 300px;
+    @include breakpoint ('mobile') {
+        padding-bottom: 228px;
+    }
 }
 .signup-inner-container {
-    min-height: 750px;
+    min-height: 320px;
     position: relative;
     overflow: hidden !important;
+    @include breakpoint ('tablet') {
+        min-height: 723px !important;
+    }
 }
 .signup-tablet-wrapper {
     width: 410px !important;
     position: relative;
-    top: 140px !important;
     left: 50% !important;
     transform: translateX(calc(-50% + 37px));
-    top: 182px;
     z-index: 10;
+    @include breakpoint ('tablet') {
+        width: 650px !important;
+        transform: translateX(calc(-50% + 58px));
+        top: 95px;
+    }
+}
+.cloud-styles {
+    position: absolute !important;
+    width: 58px;
+    right: 30px;
+    bottom: 85px;
+    @include breakpoint ('tablet') {
+        width: 114px;
+        right: -15px;
+        bottom: 145px;
+    }
+}
+.cloud-left-styles {
+    position: absolute !important;
+    width: 58px;
+    left: 30px;
+    bottom: 85px;
+    @include breakpoint ('tablet') {
+        width: 175px;
+        left: -170px;
+        bottom: 385px;
+    }
 }
 
 // ============= Signup ornament styles ==================
 .center-ornament {
     display: block !important;
     position: absolute;
-    top: 0;
+    top: 0 !important;
     left: 0;
     right: 0;
     bottom: 0;
     &:before {
         content: '';
         position: absolute;
-        top: 158px;
         left: 50%;
         transform: translateX(-50%);
         width: 311px;
@@ -40,6 +72,11 @@
         border-radius: 50%;
         background-color: #fff;
         opacity: 0.3;
+        @include breakpoint('tablet') {
+            width: 603px;
+            height: 603px;
+            top: 60px;
+        }
     }
 }
 .center-inner-ornament {
@@ -52,13 +89,39 @@
     &:before {
         content: '';
         position: absolute;
-        top: 170px;
+        top: 12px;
         left: 50%;
         transform: translateX(-50%);
         width: 286px;
         height: 286px;
         border-radius: 50%;
         background-color: $primary;
+        z-index: 1;
+        @include breakpoint('tablet') {
+            width: 475px;
+            height: 475px;
+            top: 124px;
+        }
+    }
+}
+.center-outer-ornament {
+    display: block !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    &:before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 0px;
+        width: 723px;
+        height: 723px;
+        border-radius: 50%;
+        background-color: #fff;
+        opacity: 0.3;
     }
 }
 
@@ -67,6 +130,9 @@
     width: 100%;
     min-height: 316px;
     top: 127px;
+    @include breakpoint('tablet') {
+        min-height: 560px;
+    }
     .yellow-dot {
         display: block;
         width: 100%;
@@ -82,7 +148,16 @@
             height: 30px;
             background-color: $yellow-balls;
             border-radius: 50%;
-            z-index: 1000;
+            @include breakpoint('tablet') {
+                width: 90px;
+                height: 90px;
+                left: -45px;
+            }
+            @include breakpoint('desktop') {
+                width: 90px;
+                height: 90px;
+                left: 0px;
+            }
         }
     }
     .white-dot-first {
@@ -91,6 +166,9 @@
         height: 100%;
         position: absolute;
         overflow: hidden;
+        @include breakpoint('tablet') {
+            min-height: 723px;
+        }
         &:before {
             content: '';
             position: absolute;
@@ -101,6 +179,11 @@
             background-color: #fff;
             border-radius: 50%;
             z-index: 1000;
+            @include breakpoint('tablet') {
+                width: 32px;
+                height: 32px;
+                left: 130px;
+            }
         }
         &:after {
             content: '';
@@ -112,6 +195,12 @@
             background-color: #fff;
             border-radius: 50%;
             z-index: 1000;
+            @include breakpoint('tablet') {
+                width: 32px;
+                height: 32px;
+                bottom: 0;
+                left: 70px;
+            }
         }
     }
     .white-dot-second {
@@ -120,6 +209,9 @@
         height: 100%;
         position: absolute;
         overflow: hidden;
+        @include breakpoint('tablet') {
+            min-height: 723px;
+        }
         &:before {
             content: '';
             position: absolute;
@@ -130,6 +222,41 @@
             background-color: #fff;
             border-radius: 50%;
             z-index: 1000;
+            @include breakpoint('tablet') {
+                width: 16px;
+                height: 16px;
+                bottom: 50px;
+                right: 159px;
+            }
+        }
+    }
+    .colored-dots {
+        display: block;
+        width: 100%;
+        min-height: 723px;
+        position: absolute;
+        overflow: hidden;
+        &:before {
+            position: absolute;
+            content: '';
+            width: 48px;
+            height: 48px;
+            background-color: $primary;
+            top: 140px;
+            right: 40px;
+            border-radius: 50%;
+        }
+        @include breakpoint('desktop') {
+            &:after {
+                position: absolute;
+                content: '';
+                width: 80px;
+                height: 80px;
+                background-color: $pink-balls;
+                top: 490px;
+                right: -40px;
+                border-radius: 50%;
+            }
         }
     }
 }
