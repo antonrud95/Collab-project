@@ -1,0 +1,135 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+//============= Signup general styles =================
+.signup-main-container {
+    background-color: $grey-bg;
+    position: relative;
+}
+.signup-inner-container {
+    min-height: 750px;
+    position: relative;
+    overflow: hidden !important;
+}
+.signup-tablet-wrapper {
+    width: 410px !important;
+    position: relative;
+    top: 140px !important;
+    left: 50% !important;
+    transform: translateX(calc(-50% + 37px));
+    top: 182px;
+    z-index: 10;
+}
+
+// ============= Signup ornament styles ==================
+.center-ornament {
+    display: block !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    &:before {
+        content: '';
+        position: absolute;
+        top: 158px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 311px;
+        height: 311px;
+        border-radius: 50%;
+        background-color: #fff;
+        opacity: 0.3;
+    }
+}
+.center-inner-ornament {
+    display: block !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    &:before {
+        content: '';
+        position: absolute;
+        top: 170px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 286px;
+        height: 286px;
+        border-radius: 50%;
+        background-color: $primary;
+    }
+}
+
+.main-ornament-container {
+    position: absolute;
+    width: 100%;
+    min-height: 316px;
+    top: 127px;
+    .yellow-dot {
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        overflow: hidden;
+        &:before {
+            content: '';
+            position: absolute;
+            left: -15px;
+            bottom: 0;
+            width: 30px;
+            height: 30px;
+            background-color: $yellow-balls;
+            border-radius: 50%;
+            z-index: 1000;
+        }
+    }
+    .white-dot-first {
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        overflow: hidden;
+        &:before {
+            content: '';
+            position: absolute;
+            left: 109px;
+            top: 0;
+            width: 10px;
+            height: 10px;
+            background-color: #fff;
+            border-radius: 50%;
+            z-index: 1000;
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            left: 35px;
+            bottom: 70px;
+            width: 10px;
+            height: 10px;
+            background-color: #fff;
+            border-radius: 50%;
+            z-index: 1000;
+        }
+    }
+    .white-dot-second {
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        overflow: hidden;
+        &:before {
+            content: '';
+            position: absolute;
+            right: 22px;
+            bottom: 103px;
+            width: 5px;
+            height: 5px;
+            background-color: #fff;
+            border-radius: 50%;
+            z-index: 1000;
+        }
+    }
+}
