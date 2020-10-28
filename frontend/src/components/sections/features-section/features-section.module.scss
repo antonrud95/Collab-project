@@ -53,14 +53,13 @@
           width: 1118px;
           height: 1118px;
           right: -780px;
-          top: -47px;
-          z-index: -1;
+          top: -27px;
         }
         @include breakpoint('desktop') {
           width: 1220px;
           height: 1220px;
-          right: -510px;
-          top: -47px;
+          right: -610px;
+          top: -127px;
           z-index: 1;
         }
     }
@@ -125,6 +124,9 @@
         @include breakpoint('tablet') {
             right: -75px !important;
             top: 126px !important;
+        }
+        @include breakpoint('desktop') {
+            right: 200px !important;
         }
     }
 }
