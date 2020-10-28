@@ -1,0 +1,46 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.advantages-outer {
+    min-height: 750px;
+    background-color: red;
+}
+
+.signup-section-title {
+    font-size: 20px;
+    line-height: 28px;
+    text-align: center;
+    letter-spacing: -0.045em;
+    color: $text-dark;
+    margin-bottom: 32px;
+}
+
+.input-form-styles {
+    position: relative !important;
+}
+
+
+.advantages-button {
+    width: 100% !important;
+    background-color: $primary;
+    color: $white-text;
+    @include breakpoint('mobile') {
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        max-width: 178px;
+        min-height: 82px !important;
+    }
+}
+
+.signup-section-form {
+    margin-top: -328px;
+    position: relative;
+    z-index: 1000;
+    @include breakpoint('mobile') {
+        max-width: 504px !important;
+        margin: -138px auto 0 auto;
+    }
+}
+

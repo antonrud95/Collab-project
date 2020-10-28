@@ -6,6 +6,7 @@ import SEO from '~/components/seo.component'
 import HeroSection from '~/components/sections/hero-section/hero-section.component'
 import FeaturesSection from '~/components/sections/features-section/features-section.component'
 import SignupSection from '~/components/sections/signup-section/signup-section.component'
+import AdvantagesSection from '~/components/sections/advantages-section/advantages-section.component'
 
 const IndexPage = ({ data }) => (
   <Layout>
@@ -13,6 +14,7 @@ const IndexPage = ({ data }) => (
     <HeroSection heroes={data.allStrapiHeroes.nodes} />
     <FeaturesSection />
     <SignupSection />
+    <AdvantagesSection />
   </Layout>
 )
 export const query = graphql`
