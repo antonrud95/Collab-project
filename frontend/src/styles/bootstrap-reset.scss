@@ -36,9 +36,15 @@
 
 .slick-prev {
   left: 0 !important;
+  @include breakpoint ('tablet') {
+    left: -185px !important;
+  }
 }
 .slick-next {
   left: 57px !important;
+  @include breakpoint ('tablet') {
+    left: -128px !important;
+  }
 }
 
 .slick-prev,
@@ -51,6 +57,9 @@
   color: #5956E9 !important;
   outline: none !important;
   z-index: 1000 !important;
+  @include breakpoint ('tablet') {
+    top: calc(100% - 40px) !important;
+  }
 }
 
 .slick-prev:before, 
