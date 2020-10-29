@@ -1,13 +1,17 @@
 import React from 'react'
-import { Container } from 'react-bootstrap'
+import { Container, Row, Col } from 'react-bootstrap'
 
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 
 import SButton from '~/components/ui/general/button/button.component'
+
+import { useWindowDimensions } from '~/helpers/useWindowDimensions.helper'
+
 import styles from './prototying-section.module.scss'
 
 const PrototyingSection = () => {
+  const { width } = useWindowDimensions()
   const data = useStaticQuery(graphql`
     query {
       thumbUp: file(relativePath: { eq: "images/prototying/thumbs-up.png" }) {
