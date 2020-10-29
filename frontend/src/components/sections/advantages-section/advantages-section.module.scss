@@ -1,11 +1,6 @@
 @import 'src/styles/variables';
 @import 'src/styles/mixins';
 
-// .advantages-outer {
-//     min-height: 750px;
-//     background-color: red;
-// }
-
 .signup-section-title {
     font-size: 20px;
     line-height: 28px;
@@ -45,7 +40,7 @@
 }
 
 .advantages-content {
-    padding-top: 150px;
+    padding-top: 150px !important;
 }
 
 .advantages-title {
@@ -64,6 +59,14 @@
     color: $text-dark;
     margin-bottom: 34px;
     letter-spacing: -0.025em;
+    @include breakpoint ('tablet') {
+        font-size: 68px;
+        line-height: 68px;
+    }
+    @include breakpoint ('desktop') {
+        font-size: 80px;
+        line-height: 80px;
+    }
 }
 
 .advantages-description {
@@ -72,6 +75,9 @@
     line-height: 24px;
     color: $text-grey;
     margin-bottom: 48px;
+    @include breakpoint ('tablet') {
+        width: 40%;
+    }
 }
 
 .icon-wrapper-text {
@@ -80,11 +86,13 @@
     line-height: 20px;
     color: $text-dark;
     margin-bottom: 0;
+    padding-left: 26px;
 }
 
 .icon-wrapper {
     display: flex;
     align-items: center;
+    margin-bottom: 32px;
 }
 
 .icon-styles-wrapper {
@@ -94,3 +102,47 @@
     height: 56px !important;
 }
 
+.main-container-fluid {
+    position: relative !important;
+    padding-bottom: 72px !important;
+}
+
+.advantages-content {
+    @include breakpoint('desktop') {
+        position: relative !important;
+    }
+}
+
+.advantages-image-wrapper {
+    overflow: hidden;
+    @include breakpoint('tablet') {
+        width: 100% !important;
+        height: 100%;
+        position: absolute !important;
+        top: 50px;
+        right: 0;
+    }
+    @include breakpoint('desktop') {
+        position: relative;
+    }
+}
+
+.advantages-phone {
+    width: 400px;
+    right: 20px;
+    @include breakpoint('mobile') {
+        margin: 0 auto;
+        right: 0;
+    }
+    @include breakpoint('tablet') {
+        width: 590px !important;
+        margin: 0;
+        position: absolute !important;
+        right: -77px;
+    }
+    @include breakpoint('desktop') {
+        width: 590px !important;
+        margin: 0;
+        right: 0;
+    }
+}

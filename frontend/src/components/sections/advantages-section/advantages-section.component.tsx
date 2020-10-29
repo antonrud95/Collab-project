@@ -6,34 +6,23 @@ import SInput from '~/components/ui/general/input/input.component'
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 
+import IconFirst from '~/assets/icons/advantages/icon-first.svg'
+import IconSecond from '~/assets/icons/advantages/icon-second.svg'
+import IconThird from '~/assets/icons/advantages/icon-third.svg'
+
+import { useWindowDimensions } from '~/helpers/useWindowDimensions.helper'
+
 import styles from './advantages-section.module.scss'
 
 const AdvantagesSection = () => {
+  const { width } = useWindowDimensions()
   const data = useStaticQuery(graphql`
     query {
-      imageFirst: file(
-        relativePath: { eq: "icons/advantages/icon-first.png" }
+      advantagesPhone: file(
+        relativePath: { eq: "images/advantages/advantages-phone.png" }
       ) {
         childImageSharp {
-          fluid(maxWidth: 56) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      imageSecond: file(
-        relativePath: { eq: "icons/advantages/icon-second.png" }
-      ) {
-        childImageSharp {
-          fluid(maxWidth: 56) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      imageThird: file(
-        relativePath: { eq: "icons/advantages/icon-third.png" }
-      ) {
-        childImageSharp {
-          fluid(maxWidth: 56) {
+          fluid(maxWidth: 595) {
             ...GatsbyImageSharpFluid
           }
         }
@@ -55,9 +44,9 @@ const AdvantagesSection = () => {
           </div>
         </div>
       </Container>
-      <Container className={styles.advantagesContent}>
-        <Row>
-          <Col xs="12" md="6">
+      <Container fluid className={styles.mainContainerFluid}>
+        <Container className={styles.advantagesContent}>
+          <div>
             <h3 className={styles.advantagesTitle}>Auto Adaptive layouts</h3>
             <p className={styles.advantagesText}>Responsive{<br />}DNA.</p>
             <p className={styles.advantagesDescription}>
@@ -66,13 +55,13 @@ const AdvantagesSection = () => {
             </p>
             <div className={styles.iconWrapper}>
               <div className={styles.iconStylesWrapper}>
-                <Img fluid={data.imageFirst.childImageSharp.fluid} />
+                <IconFirst />
               </div>
               <p className={styles.iconWrapperText}>Advanced pinning</p>
             </div>
             <div className={styles.iconWrapper}>
               <div className={styles.iconStylesWrapper}>
-                <Img fluid={data.imageFirst.childImageSharp.fluid} />
+                <IconSecond />
               </div>
               <p className={styles.iconWrapperText}>
                 Relative positioning with containers
@@ -80,17 +69,30 @@ const AdvantagesSection = () => {
             </div>
             <div className={styles.iconWrapper}>
               <div className={styles.iconStylesWrapper}>
-                <Img fluid={data.imageFirst.childImageSharp.fluid} />
+                <IconThird />
               </div>
               <p className={styles.iconWrapperText}>
                 Percentage-based geometry
               </p>
             </div>
-          </Col>
-          <Col xs="12" md="6">
-            Hello
-          </Col>
-        </Row>
+          </div>
+          {width > 1200 && (
+            <div className={styles.advantagesImageWrapper}>
+              <Img
+                fluid={data.advantagesPhone.childImageSharp.fluid}
+                className={styles.advantagesPhone}
+              />
+            </div>
+          )}
+        </Container>
+        {width < 1200 && (
+          <div className={styles.advantagesImageWrapper}>
+            <Img
+              fluid={data.advantagesPhone.childImageSharp.fluid}
+              className={styles.advantagesPhone}
+            />
+          </div>
+        )}
       </Container>
     </div>
   )
