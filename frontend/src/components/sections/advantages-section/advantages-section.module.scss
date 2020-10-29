@@ -1,10 +1,10 @@
 @import 'src/styles/variables';
 @import 'src/styles/mixins';
 
-.advantages-outer {
-    min-height: 750px;
-    background-color: red;
-}
+// .advantages-outer {
+//     min-height: 750px;
+//     background-color: red;
+// }
 
 .signup-section-title {
     font-size: 20px;
@@ -42,5 +42,55 @@
         max-width: 504px !important;
         margin: -138px auto 0 auto;
     }
+}
+
+.advantages-content {
+    padding-top: 150px;
+}
+
+.advantages-title {
+    font-family: 'DMSans-Medium', sans-serif;
+    font-size: 16px;
+    line-height: 16px;
+    color: $primary;
+    margin-bottom: 18px;
+    letter-spacing: -0.025em;
+}
+
+.advantages-text {
+    font-family: 'DMSans-Medium', sans-serif;
+    font-size: 48px;
+    line-height: 48px;
+    color: $text-dark;
+    margin-bottom: 34px;
+    letter-spacing: -0.025em;
+}
+
+.advantages-description {
+    font-family: 'Poppins-Regular', sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    color: $text-grey;
+    margin-bottom: 48px;
+}
+
+.icon-wrapper-text {
+    font-family: 'DMSans-Medium', sans-serif;
+    font-size: 18px;
+    line-height: 20px;
+    color: $text-dark;
+    margin-bottom: 0;
+}
+
+.icon-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.icon-styles-wrapper {
+    display: block;
+    position: relative;
+    min-width: 56px !important;
+    height: 56px !important;
 }
 
