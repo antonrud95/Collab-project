@@ -26,16 +26,18 @@ const PrototyingSection = () => {
   return (
     <div>
       <Container fluid className={styles.containerOuter}>
-        <div className={styles.protoImageWrapper}>
-          <Img
-            fluid={data.thumbUp.childImageSharp.fluid}
-            className={styles.handImage}
-          />
-          <span className={styles.ornamentFirst} />
-          <span className={styles.ornamentSecond} />
-          <span className={styles.ornamentThird} />
-          <span className={styles.ornamentFourth} />
-        </div>
+        {width < 1441 && (
+          <div className={styles.protoImageWrapper}>
+            <Img
+              fluid={data.thumbUp.childImageSharp.fluid}
+              className={styles.handImage}
+            />
+            <span className={styles.ornamentFirst} />
+            <span className={styles.ornamentSecond} />
+            <span className={styles.ornamentThird} />
+            <span className={styles.ornamentFourth} />
+          </div>
+        )}
         <div className={styles.containerInner}>
           <div className={styles.bgContainer}>
             <div className={styles.bgContainerContent}>
@@ -53,6 +55,18 @@ const PrototyingSection = () => {
                 See Sample Prototype
               </SButton>
             </div>
+            {width > 1440 && (
+              <div className={styles.protoImageWrapper}>
+                <Img
+                  fluid={data.thumbUp.childImageSharp.fluid}
+                  className={styles.handImage}
+                />
+                <span className={styles.ornamentFirst} />
+                <span className={styles.ornamentSecond} />
+                <span className={styles.ornamentThird} />
+                <span className={styles.ornamentFourth} />
+              </div>
+            )}
           </div>
         </div>
       </Container>
