@@ -45,6 +45,7 @@
         max-width: 277px !important;
         border: 1px solid #E3E6E9;
         border-radius: 32px;
+        transition: 0.2s ease-in-out;
         @include breakpoint('desktop') {
             max-width: 320px !important;
         }
@@ -158,18 +159,41 @@
             top: 42px;
         }
     }
-    &:after {
+}
+
+.plan-item-wrapper {
+    position: relative;
+    &:hover {
+        background-color: $primary;
+        .header-title-styles,
+        .plan-item-title,
+        .price-colored,
+        .description-styles {
+            color: $white-text !important;
+        }
+        .button-styles {
+            color: $primary !important;
+            background-color: $white-text;
+        }
+        .plan-item-header-logo {
+            &:before {
+                background-color: $white-text;
+                opacity: .5;
+            }
+        }
+    }
+    &:hover:after {
         content: '';
-        width: 20px;
-        height: 20px;
+        width: 32px;
+        height: 32px;
         border-radius: 50%;
-        background-color: $pink-balls;
+        background-color: $yellow-balls;
         position: absolute;
-        left: 26px;
-        top: 26px;
+        right: 8px;
+        top: 8px;
         @include breakpoint('desktop') {
-            left: 42px;
-            top: 42px;
+            width: 48px;
+            height: 48px;;
         }
     }
 }
