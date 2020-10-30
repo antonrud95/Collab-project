@@ -1,0 +1,33 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.plan-section-wrapper {
+    padding-top: 75px !important;
+    text-align: center;
+    .plan-section-header-upper-title {
+        font-family: 'DMSans-Bold', sans-serif;
+        font-size: 20px;
+        line-height: 20px;
+        color: $text-dark;
+        margin-bottom: 16px;
+    }
+    .plan-section-header-title {
+        font-family: 'DMSans-Medium', sans-serif;
+        font-size: 80px;
+        line-height: 80px;
+        color: $text-dark;
+        margin-bottom: 31px;
+        .title-text-colored,
+        .title-dot-colored {
+            color: $primary;
+        }
+    }
+    .plan-section-header-text {
+        font-family: 'Poppins-Regular', sans-serif;
+        font-size: 18px;
+        line-height: 27px;
+        color: $text-grey;
+        margin-bottom: 34px;
+    }
+}
+
