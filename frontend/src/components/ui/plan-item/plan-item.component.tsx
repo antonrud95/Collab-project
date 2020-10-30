@@ -16,12 +16,16 @@ interface Props {
   priceWrapper: string
   priceColored: string
   priceGrey: string
-  buttonText: string
   image: FluidObject
   imageStyles: string
   descriptionComponent: string
+  descriptionComponentSecond: string
+  descriptionComponentThird: string
   descriptionStyles: string
   descriptionWrapper: string
+  imageBox: string
+  itemHeaderTitleStyles: string
+  button: string
 }
 
 const PlanItem: FC<Props> = ({
@@ -36,18 +40,22 @@ const PlanItem: FC<Props> = ({
   priceWrapper,
   priceColored,
   priceGrey,
-  buttonText,
   image,
   imageStyles,
   descriptionComponent,
+  descriptionComponentSecond,
+  descriptionComponentThird,
   descriptionStyles,
   descriptionWrapper,
+  imageBox,
+  itemHeaderTitleStyles,
+  button,
 }) => {
   return (
     <div className={itemWrapper}>
       <div className={itemWrapperHeader}>
         <span className={itemHeaderLogo} />
-        {upperTitle}
+        <h3 className={itemHeaderTitleStyles}>{upperTitle}</h3>
       </div>
       <h2 className={titleStyles}>{title}</h2>
       <div className={priceWrapper}>
@@ -55,10 +63,26 @@ const PlanItem: FC<Props> = ({
         <p className={priceGrey}>{priceMonth}</p>
       </div>
       <div className={descriptionWrapper}>
-        <Img fluid={image} className={imageStyles} />
+        <div className={imageBox}>
+          <Img fluid={image} className={imageStyles} />
+        </div>
         <p className={descriptionStyles}>{descriptionComponent}</p>
       </div>
-      <SButton variant="hero">{buttonText}</SButton>
+      <div className={descriptionWrapper}>
+        <div className={imageBox}>
+          <Img fluid={image} className={imageStyles} />
+        </div>
+        <p className={descriptionStyles}>{descriptionComponentSecond}</p>
+      </div>
+      <div className={descriptionWrapper}>
+        <div className={imageBox}>
+          <Img fluid={image} className={imageStyles} />
+        </div>
+        <p className={descriptionStyles}>{descriptionComponentThird}</p>
+      </div>
+      <SButton variant="hero" className={button}>
+        Try free for 30 days
+      </SButton>
     </div>
   )
 }
