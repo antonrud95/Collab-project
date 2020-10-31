@@ -9,6 +9,7 @@ import SignupSection from '~/components/sections/signup-section/signup-section.c
 import AdvantagesSection from '~/components/sections/advantages-section/advantages-section.component'
 import PrototyingSection from '~/components/sections/prototying-section/prototying-section.component'
 import PlanSection from '~/components/sections/plan-section/plan-section.component'
+import EffortlessSection from '~/components/sections/effortless-section/effortless-section.component'
 
 const IndexPage = ({ data }) => (
   <Layout>
@@ -19,6 +20,7 @@ const IndexPage = ({ data }) => (
     <AdvantagesSection />
     <PrototyingSection />
     <PlanSection />
+    <EffortlessSection />
   </Layout>
 )
 export const query = graphql`
