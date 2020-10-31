@@ -10,6 +10,31 @@ const PlanSection = () => {
   const [imageFirst, setImageFirst] = useState(false)
   const [imageSecond, setImageSecond] = useState(false)
   const [imageThird, setImageThird] = useState(false)
+
+  const [costFirst, setCostFirst] = useState('$19.99')
+  const [costSecond, setCostSecond] = useState('$29.99')
+  const [costThird, setCostThird] = useState('$99.99')
+  const [year, setYear] = useState('/month')
+
+  const costHandler = useCallback(() => {
+    setCostFirst('$199')
+    if (costFirst === '$199') {
+      setCostFirst('$19.99')
+    }
+    setCostSecond('$599')
+    if (costSecond === '$599') {
+      setCostSecond('$29.99')
+    }
+    setCostThird('$999')
+    if (costThird === '$999') {
+      setCostThird('$99.99')
+    }
+    setYear('/year')
+    if (year === '/year') {
+      setYear('/month')
+    }
+  }, [costFirst])
+
   const firstHandler = useCallback(() => {
     setImageFirst(true)
     if (imageFirst === true) {
@@ -67,6 +92,7 @@ const PlanSection = () => {
           type={'checkbox'}
           inputWrapper={styles.checkboxWrapper}
           inputStyles={styles.checkboxStyles}
+          change={costHandler}
         />
       </div>
       <div className={styles.planCardsContainer}>
@@ -81,8 +107,8 @@ const PlanSection = () => {
           title={'Standard'}
           titleStyles={styles.planItemTitle}
           priceWrapper={styles.priceWrapper}
-          price={'$19.99'}
-          priceMonth={' /month'}
+          price={costFirst}
+          priceMonth={year}
           priceColored={styles.priceColored}
           priceGrey={styles.priceGrey}
           descriptionWrapper={styles.priceDescWrapper}
@@ -112,8 +138,8 @@ const PlanSection = () => {
           title={'Professional'}
           titleStyles={styles.planItemTitle}
           priceWrapper={styles.priceWrapper}
-          price={'$29.99'}
-          priceMonth={' /month'}
+          price={costSecond}
+          priceMonth={year}
           priceColored={styles.priceColored}
           priceGrey={styles.priceGrey}
           descriptionWrapper={styles.priceDescWrapper}
@@ -143,8 +169,8 @@ const PlanSection = () => {
           title={'Ultimate'}
           titleStyles={styles.planItemTitle}
           priceWrapper={styles.priceWrapper}
-          price={'$99.99'}
-          priceMonth={' /month'}
+          price={costThird}
+          priceMonth={year}
           priceColored={styles.priceColored}
           priceGrey={styles.priceGrey}
           descriptionWrapper={styles.priceDescWrapper}

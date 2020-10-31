@@ -7,6 +7,7 @@ interface Props {
   inputStyles: string
   inputWrapper: string
   type: string
+  change?: any
 }
 
 const SInput: FC<Props> = ({
@@ -15,11 +16,17 @@ const SInput: FC<Props> = ({
   inputStyles,
   inputWrapper,
   type,
+  change,
 }) => {
   return (
     <div className={inputWrapper}>
       {children}
-      <input type={type} placeholder={placeholder} className={inputStyles} />
+      <input
+        type={type}
+        placeholder={placeholder}
+        className={inputStyles}
+        onChange={change}
+      />
     </div>
   )
 }
