@@ -215,10 +215,6 @@
     }
 }
 
-.checkbox-wrapper {
-    margin-bottom: 72px;
-}
-
 .checkbox-styles {
     position: relative;
     width: 56px;
@@ -245,5 +241,21 @@
     background: $primary;
     &:before {
         left: 32px;
+    }
+}
+
+.plan-checkbox-wrapper {
+    margin-bottom: 72px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .checkbox-text-first,
+    .checkbox-text-second {
+        font-family: 'Poppins-Medium', sans-serif;
+        font-size: 16px;
+        line-height: 13px;
+        margin-bottom: 0;
+        color: $text-grey;
+        margin: 0 24px;
     }
 }

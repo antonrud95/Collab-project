@@ -88,12 +88,16 @@ const PlanSection = () => {
           <br />
           and design teams.
         </p>
-        <SInput
-          type={'checkbox'}
-          inputWrapper={styles.checkboxWrapper}
-          inputStyles={styles.checkboxStyles}
-          change={costHandler}
-        />
+        <div className={styles.planCheckboxWrapper}>
+          <p className={styles.checkboxTextFirst}>Billed monthly</p>
+          <SInput
+            type={'checkbox'}
+            inputWrapper={styles.checkboxWrapper}
+            inputStyles={styles.checkboxStyles}
+            change={costHandler}
+          />
+          <p className={styles.checkboxTextSecond}>Billed yearly</p>
+        </div>
       </div>
       <div className={styles.planCardsContainer}>
         <PlanItem
