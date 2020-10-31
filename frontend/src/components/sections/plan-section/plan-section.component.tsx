@@ -1,6 +1,7 @@
 import React, { useState, useCallback } from 'react'
 import { Container } from 'react-bootstrap'
 import { graphql, useStaticQuery } from 'gatsby'
+import SInput from '~/components/ui/general/input/input.component'
 
 import PlanItem from '~/components/ui/plan-item/plan-item.component'
 import styles from './plan-section.module.scss'
@@ -62,6 +63,11 @@ const PlanSection = () => {
           <br />
           and design teams.
         </p>
+        <SInput
+          type={'checkbox'}
+          inputWrapper={styles.checkboxWrapper}
+          inputStyles={styles.checkboxStyles}
+        />
       </div>
       <div className={styles.planCardsContainer}>
         <PlanItem

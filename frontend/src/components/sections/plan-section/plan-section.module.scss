@@ -214,3 +214,36 @@
         }
     }
 }
+
+.checkbox-wrapper {
+    margin-bottom: 72px;
+}
+
+.checkbox-styles {
+    position: relative;
+    width: 56px;
+    height: 24px;
+    appearance: none;
+    background: #c6c6c6;
+    outline: none;
+    border-radius: 20px;
+    transition: .5s;
+    &:before {
+        content: '';
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        border-radius: 20px;
+        top: 0;
+        left: 0;
+        background: #fff;
+        transition: .5s;
+        transform: scale(0.8);
+    }
+}
+.checkbox-styles:checked {
+    background: $primary;
+    &:before {
+        left: 31px;
+    }
+}
