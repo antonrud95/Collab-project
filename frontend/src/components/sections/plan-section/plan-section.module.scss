@@ -30,22 +30,39 @@
         line-height: 27px;
         color: $text-grey;
         margin-bottom: 34px;
+        position: relative;
+        &:after {
+            content: '';
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 49px;
+            height: 49px;
+            background-color: $pink-balls;
+            border-radius: 50%;
+        }
     }
 }
 
 .plan-cards-container {
-    display: flex;
     justify-content: space-between;
     max-width: 876px;
     margin: 0 auto;
+    @include breakpoint('mobile') {
+        display: flex;
+        flex-wrap: wrap;
+    }
     @include breakpoint('desktop') {
         max-width: 1040px;
     }
     .plan-item-wrapper {
-        max-width: 277px !important;
+        margin: 0 auto 25px auto;
         border: 1px solid #E3E6E9;
         border-radius: 32px;
         transition: 0.2s ease-in-out;
+        @include breakpoint('tablet') {
+            max-width: 277px !important;
+        }
         @include breakpoint('desktop') {
             max-width: 320px !important;
         }
