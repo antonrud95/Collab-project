@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useCallback } from 'react'
 import { Container } from 'react-bootstrap'
 import { graphql, useStaticQuery } from 'gatsby'
 
@@ -6,6 +6,27 @@ import PlanItem from '~/components/ui/plan-item/plan-item.component'
 import styles from './plan-section.module.scss'
 
 const PlanSection = () => {
+  const [imageFirst, setImageFirst] = useState(false)
+  const [imageSecond, setImageSecond] = useState(false)
+  const [imageThird, setImageThird] = useState(false)
+  const firstHandler = useCallback(() => {
+    setImageFirst(true)
+    if (imageFirst === true) {
+      setImageFirst(false)
+    }
+  }, [imageFirst])
+  const secondHandler = useCallback(() => {
+    setImageSecond(true)
+    if (imageSecond === true) {
+      setImageSecond(false)
+    }
+  }, [imageSecond])
+  const thirdHandler = useCallback(() => {
+    setImageThird(true)
+    if (imageThird === true) {
+      setImageThird(false)
+    }
+  }, [imageThird])
   const data = useStaticQuery(graphql`
     query {
       box: file(relativePath: { eq: "images/plans/box.png" }) {
@@ -44,6 +65,8 @@ const PlanSection = () => {
       </div>
       <div className={styles.planCardsContainer}>
         <PlanItem
+          enter={firstHandler}
+          leave={firstHandler}
           itemWrapper={styles.planItemWrapper}
           itemHeaderTitleStyles={styles.headerTitleStyles}
           itemWrapperHeader={styles.planItemWrapperHeader}
@@ -57,7 +80,11 @@ const PlanSection = () => {
           priceColored={styles.priceColored}
           priceGrey={styles.priceGrey}
           descriptionWrapper={styles.priceDescWrapper}
-          image={data.boxNoActive.childImageSharp.fluid}
+          image={
+            !imageFirst
+              ? data.boxNoActive.childImageSharp.fluid
+              : data.box.childImageSharp.fluid
+          }
           imageStyles={styles.boxStyles}
           descriptionStyles={styles.descriptionStyles}
           descriptionComponent={'1 user'}
@@ -69,6 +96,8 @@ const PlanSection = () => {
           button={styles.buttonStyles}
         />
         <PlanItem
+          enter={secondHandler}
+          leave={secondHandler}
           itemWrapper={styles.planItemWrapper}
           itemHeaderTitleStyles={styles.headerTitleStyles}
           itemWrapperHeader={styles.planItemWrapperHeader}
@@ -82,7 +111,11 @@ const PlanSection = () => {
           priceColored={styles.priceColored}
           priceGrey={styles.priceGrey}
           descriptionWrapper={styles.priceDescWrapper}
-          image={data.boxNoActive.childImageSharp.fluid}
+          image={
+            !imageSecond
+              ? data.boxNoActive.childImageSharp.fluid
+              : data.box.childImageSharp.fluid
+          }
           imageStyles={styles.boxStyles}
           descriptionStyles={styles.descriptionStyles}
           descriptionComponent={'3+ user'}
@@ -94,6 +127,8 @@ const PlanSection = () => {
           button={styles.buttonStyles}
         />
         <PlanItem
+          enter={thirdHandler}
+          leave={thirdHandler}
           itemWrapper={styles.planItemWrapper}
           itemHeaderTitleStyles={styles.headerTitleStyles}
           itemWrapperHeader={styles.planItemWrapperHeader}
@@ -107,7 +142,11 @@ const PlanSection = () => {
           priceColored={styles.priceColored}
           priceGrey={styles.priceGrey}
           descriptionWrapper={styles.priceDescWrapper}
-          image={data.boxNoActive.childImageSharp.fluid}
+          image={
+            !imageThird
+              ? data.boxNoActive.childImageSharp.fluid
+              : data.box.childImageSharp.fluid
+          }
           imageStyles={styles.boxStyles}
           descriptionStyles={styles.descriptionStyles}
           descriptionComponent={'10+ user'}

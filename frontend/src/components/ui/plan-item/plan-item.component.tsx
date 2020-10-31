@@ -26,6 +26,8 @@ interface Props {
   imageBox: string
   itemHeaderTitleStyles: string
   button: string
+  enter: any
+  leave: any
 }
 
 const PlanItem: FC<Props> = ({
@@ -50,9 +52,11 @@ const PlanItem: FC<Props> = ({
   imageBox,
   itemHeaderTitleStyles,
   button,
+  enter,
+  leave,
 }) => {
   return (
-    <div className={itemWrapper}>
+    <div className={itemWrapper} onMouseEnter={enter} onMouseLeave={leave}>
       <div className={itemWrapperHeader}>
         <span className={itemHeaderLogo} />
         <h3 className={itemHeaderTitleStyles}>{upperTitle}</h3>
