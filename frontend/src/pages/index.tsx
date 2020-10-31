@@ -20,7 +20,7 @@ const IndexPage = ({ data }) => (
     <AdvantagesSection />
     <PrototyingSection />
     <PlanSection />
-    <EffortlessSection />
+    <EffortlessSection effortlesses={data.allStrapiEffortless.nodes} />
   </Layout>
 )
 export const query = graphql`
@@ -37,6 +37,21 @@ export const query = graphql`
             }
           }
         }
+      }
+    }
+    allStrapiEffortless {
+      nodes {
+        id
+        title
+        text
+        image {
+          childImageSharp {
+            fluid(quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        link
       }
     }
   }

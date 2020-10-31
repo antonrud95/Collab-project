@@ -7,16 +7,17 @@ import { graphql, useStaticQuery } from 'gatsby'
 
 import styles from './effortless-section.module.scss'
 
-// import FC from '~/types/fc'
+import EffortlessItem from '~/components/ui/effortless-item/effortless-item.component'
+
+import FC from '~/types/fc'
 import { useWindowDimensions } from '~/helpers/useWindowDimensions.helper'
+import { EffortlessType } from '~/types/effortless.type'
 
-// interface Props {
+interface Props {
+  effortlesses: EffortlessType[]
+}
 
-// }
-
-// const EffortlessSection: FC<Props> = ({}) =>
-
-const EffortlessSection = () => {
+const EffortlessSection: FC<Props> = ({ effortlesses }) => {
   const { width } = useWindowDimensions()
   const data = useStaticQuery(graphql`
     query {
@@ -46,6 +47,8 @@ const EffortlessSection = () => {
           </p>
         </Col>
         <Col>
+          <span className={styles.ornamentFirst} />
+          <span className={styles.ornamentSecond} />
           {width > 767 && (
             <div className={styles.effortsImage}>
               <Img fluid={data.lamp.childImageSharp.fluid} />
@@ -53,6 +56,24 @@ const EffortlessSection = () => {
           )}
         </Col>
       </Row>
+      <div className={styles.effortlessesWrapper}>
+        {effortlesses.map((effort: EffortlessType, index) => {
+          return (
+            <EffortlessItem
+              key={effort.id}
+              itemWrapper={styles.itemWrapper}
+              image={effort.image.childImageSharp.fluid}
+              title={effort.title}
+              text={effort.text}
+              link={effort.link}
+              titleStyles={styles.titleStyles}
+              textStyles={styles.textStyles}
+              linkStyles={styles.linkStyles}
+              imageWrapper={styles.imageWrapper}
+            />
+          )
+        })}
+      </div>
     </Container>
   )
 }

@@ -7,6 +7,12 @@
 
 .efforts-content {
     @include breakpoint('mobile') {
+        padding-top: 40px;
+    }
+    @include breakpoint('tablet') {
+        padding-top: 86px;
+    }
+    @include breakpoint('desktop') {
         padding-top: 171px;
     }
 }
@@ -41,3 +47,142 @@
 .efforts-image {
     max-width: 275px !important;
 }
+
+.item-wrapper {
+    text-align: center;
+    @include breakpoint('mobile') {
+        text-align: left;
+        width: 50%;
+        display: flex;
+        padding: 116px 0;
+        border: 1px solid #E3E6E9;
+        transition: 0.3s ease-in-out;
+        &:nth-child(1),
+        &:nth-child(3) {
+            border-right: none;
+            border-left: none;
+        }
+        &:nth-child(1),
+        &:nth-child(2) {
+            border-bottom: none;
+        }
+        &:nth-child(2),
+        &:nth-child(4) {
+            border-right: none;
+            padding-left: 15px;
+        }
+        &:hover {
+            border-top: 1px solid $primary !important;
+        }
+    }
+    @include breakpoint('tablet') {
+        &:nth-child(2),
+        &:nth-child(4) {
+            padding-left: 55px;
+        }
+    }
+    @include breakpoint('desktop') {
+        &:nth-child(2),
+        &:nth-child(4) {
+            padding-left: 112px;
+        }
+    }
+}
+
+.effortlesses-wrapper {
+    @include breakpoint('mobile') {
+        display: flex;
+        flex-wrap: wrap;
+        padding-top: 55px;
+    }
+    @include breakpoint('tablet') {
+        padding-top: 92px;
+    }
+}
+
+.image-wrapper {
+    margin: 0 auto;
+    min-width: 116px !important;
+    max-width: 116px !important;
+    position: relative;
+    @include breakpoint('mobile') {
+        margin: 0 35px 0 0;
+    }
+    @include breakpoint('tablet') {
+        margin: 0 64px 0 0;
+    }
+}
+
+.title-styles {
+    font-family: 'DMSans-Medium', sans-serif;
+    font-size: 24px;
+    line-height: 34px;
+    margin-bottom: 24px;
+}
+.text-styles {
+    font-family: 'Poppins-Regular', sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    color: $text-grey;
+    margin-bottom: 46px;
+}
+.link-styles {
+    font-family: 'Poppins-Medium', sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.ornament-first {
+    display: block;
+    @include breakpoint('tablet') {
+        &:before {
+            content: '';
+            width: 100px;
+            height: 100px;
+            background-color: $primary;
+            border-radius: 50%;
+            position: absolute;
+            right: 0;
+            top: -100px;
+        }
+        &:after {
+            content: '';
+            width: 40px;
+            height: 40px;
+            background-color: $yellow-balls;
+            border-radius: 50%;
+            position: absolute;
+            right: 0;
+            top: 50%;
+        }
+    }
+    @include breakpoint('desktop') {
+        &:before {
+            content: '';
+            width: 148px;
+            height: 148px;
+            background-color: $primary;
+            border-radius: 50%;
+            position: absolute;
+            right: 70px;
+            top: -140px;
+        }
+    }
+}
+
+.ornament-second {
+    display: block;
+    @include breakpoint('tablet') {
+        &:before {
+            content: '';
+            width: 70px;
+            height: 70px;
+            background-color: $pink-balls;
+            border-radius: 50%;
+            position: absolute;
+            left: -350px;
+            top: 20%;
+        }
+    }
+}
+
