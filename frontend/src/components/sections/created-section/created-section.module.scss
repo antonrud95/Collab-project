@@ -7,14 +7,54 @@
 }
 
 .container-upper {
-    padding-top: 112px !important;
-    // position: absolute;
-    // top: 0;
-    // left: 0;
+    padding-top: 40px !important;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    min-height: 1024px;
+    overflow: hidden;
+    @include breakpoint('mobile') {
+        padding-top: 112px !important;
+    }
+    @include breakpoint('tablet') {
+        &:after {
+            content: '';
+            position: absolute;
+            right: -25%;
+            top: 100px;
+            width: 700px;
+            height: 700px;
+            border-radius: 50%;
+            background-color: $primary;
+        }
+        &:before {
+            content: '';
+            position: absolute;
+            left: -95px;
+            top: 95px;
+            width: 191px;
+            height: 191px;
+            border-radius: 50%;
+            background-color: $pink-balls;
+            z-index: -1;
+        }
+    }
+    @include breakpoint('desktop') {
+        &:after {
+            width: 924px;
+            height: 924px;
+        }
+    }
+
 }
 
 .container-inner {
     overflow: hidden !important;
+    padding-top: 750px !important;
+    @include breakpoint('mobile') {
+        padding-top: 600px !important;
+    }
 }
 
 .image-wrapper {
@@ -55,6 +95,9 @@
 }
 .image-styles {
     margin-right: 20px;
+    @include breakpoint('tablet') {
+        margin-right: 70px;
+    }
 }
 
 
