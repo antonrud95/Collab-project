@@ -58,6 +58,7 @@ module.exports = {
           // Insert list of resources
           'heroes',
           'dropdowns',
+          'effortless',
         ],
         queryLimit: 1000,
       },
