@@ -1,0 +1,129 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.container-outer {
+    background-color: #f0f0f0;
+    position: relative;
+}
+
+.container-upper {
+    padding-top: 40px !important;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    min-height: 1024px;
+    overflow: hidden;
+    @include breakpoint('mobile') {
+        padding-top: 112px !important;
+    }
+    @include breakpoint('tablet') {
+        &:after {
+            content: '';
+            position: absolute;
+            right: -25%;
+            top: 100px;
+            width: 700px;
+            height: 700px;
+            border-radius: 50%;
+            background-color: $primary;
+        }
+        &:before {
+            content: '';
+            position: absolute;
+            left: -95px;
+            top: 95px;
+            width: 191px;
+            height: 191px;
+            border-radius: 50%;
+            background-color: $pink-balls;
+            z-index: -1;
+        }
+    }
+    @include breakpoint('desktop') {
+        &:after {
+            width: 924px;
+            height: 924px;
+        }
+    }
+
+}
+
+.container-inner {
+    overflow: hidden !important;
+    padding-top: 750px !important;
+    @include breakpoint('mobile') {
+        padding-top: 600px !important;
+    }
+}
+
+.image-wrapper {
+    transform: rotate(-30deg);
+}
+
+.image-wrapper-upper {
+    transform: translateX(200%);
+    margin-bottom: 40px;
+    @include breakpoint('mobile-medium') {
+        transform: translateX(100%);
+    }
+    @include breakpoint('tablet') {
+        transform: translateX(50%);
+    }
+}
+.image-wrapper-lower {
+    transform: translateX(-450%);
+    @include breakpoint('mobile-medium') {
+        transform: translateX(-250%);
+    }
+    @include breakpoint('tablet') {
+        transform: translateX(-150%);
+    }
+    
+}
+
+.image-wrapper-upper,
+.image-wrapper-lower {
+    display: flex;
+}
+
+.image-styles {
+    min-width: 250px;
+    @include breakpoint('mobile-medium') {
+        min-width: 375px;
+    }
+}
+.image-styles {
+    margin-right: 20px;
+    @include breakpoint('tablet') {
+        margin-right: 70px;
+    }
+}
+
+
+//=================== Header styles
+
+.uppertitle {
+    font-family: 'DMSans-Bold', sans-serif;
+    font-size: 20px;
+    line-height: 20px;
+    color: $primary;
+    margin-bottom: 24px;
+}
+.title {
+    font-family: 'DMSans-Medium', sans-serif;
+    font-size: 80px;
+    line-height: 80px;
+    margin-bottom: 48px;
+}
+.text {
+    font-family: 'Poppins-Regular', sans-serif;
+    font-size: 18px;
+    line-height: 27px;
+    margin-bottom: 45px;
+}
+
+.button {
+    background-color: $primary;
+    color: $white-text;
+}
