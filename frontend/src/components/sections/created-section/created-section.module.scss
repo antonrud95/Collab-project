@@ -3,6 +3,14 @@
 
 .container-outer {
     background-color: #f0f0f0;
+    position: relative;
+}
+
+.container-upper {
+    padding-top: 112px !important;
+    // position: absolute;
+    // top: 0;
+    // left: 0;
 }
 
 .container-inner {
@@ -47,4 +55,32 @@
 }
 .image-styles {
     margin-right: 20px;
+}
+
+
+//=================== Header styles
+
+.uppertitle {
+    font-family: 'DMSans-Bold', sans-serif;
+    font-size: 20px;
+    line-height: 20px;
+    color: $primary;
+    margin-bottom: 24px;
+}
+.title {
+    font-family: 'DMSans-Medium', sans-serif;
+    font-size: 80px;
+    line-height: 80px;
+    margin-bottom: 48px;
+}
+.text {
+    font-family: 'Poppins-Regular', sans-serif;
+    font-size: 18px;
+    line-height: 27px;
+    margin-bottom: 45px;
+}
+
+.button {
+    background-color: $primary;
+    color: $white-text;
 }
