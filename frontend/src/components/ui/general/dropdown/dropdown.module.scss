@@ -1,0 +1,120 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.outer-wrapper {
+    max-width: 1240px !important;
+    position: absolute;
+    top: 120px;
+    left: 7%;
+    border-radius: 32px;
+    background-color: $white-text;
+    box-shadow: 5px 10px 40px rgba(0, 0, 0, 0.06);
+    padding: 67px 0 32px 0 !important;
+    transform: scale(0);
+    transition: 0.2s ease-in-out;
+    &__shown {
+        transform: scale(1);
+    }
+}
+
+.dropdown-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.dropdown-item-wrapper {
+    width: 33.33333%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 32px;
+    @include breakpoint('tablet') {
+        padding-left: 60px !important;  
+    }
+    @include breakpoint('desktop') {
+        padding-left: 90px !important;  
+    }
+}
+
+.dropdown-item-wrapper {
+    &:nth-child(1) {
+        .dropdown-image-wrapper {
+            width: 32px;
+        }
+    }
+    &:nth-child(2) {
+        .dropdown-image-wrapper {
+            width: 40px;
+        }
+    }
+    &:nth-child(3) {
+        .dropdown-image-wrapper {
+            width: 35px;
+        }
+    }
+    &:nth-child(4) {
+        .dropdown-image-wrapper {
+            width: 40px;
+        }
+    }
+    &:nth-child(5) {
+        .dropdown-image-wrapper {
+            width: 44px;
+        }
+    }
+    &:nth-child(6) {
+        .dropdown-image-wrapper {
+            width: 40px;
+        }
+    }
+    &:nth-child(7) {
+        .dropdown-image-wrapper {
+            width: 32px;
+        }
+    }
+}
+
+.dropdown-image-wrapper {
+    margin-right: 24px;
+}
+
+.dropdown-main-title {
+    width: 100%;
+    display: flex;
+    font-family: 'DMSans-Medium', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 22px;
+    letter-spacing: -1px;
+    color: $text-dark;
+    .main-title-text {
+        width: 33.33333%;
+        padding-left: 90px;
+        margin-bottom: 34px;
+        @include breakpoint('tablet') {
+            padding-left: 60px !important;  
+        }
+        @include breakpoint('desktop') {
+            padding-left: 90px !important; 
+        }
+    }
+}
+
+.dropdown-title-styles {
+    font-family: 'Poppins-Medium', sans-serif;
+    font-size: 15px;
+    line-height: 22.5px;
+    margin-bottom: 0;
+    color: $text-dark;
+    &:hover {
+        color: $primary;
+    }
+}
+
+.dropdown-text-styles {
+    font-family: 'Poppins-Medium', sans-serif;
+    font-size: 13px;
+    line-height: 19.5px;
+    margin-bottom: 0;
+    color: $text-grey;
+}

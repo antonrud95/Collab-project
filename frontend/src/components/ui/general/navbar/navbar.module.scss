@@ -4,25 +4,40 @@
   background-color: transparent;
   padding: 1.5rem 0;
   transition: all 0.1s ease-in-out;
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+}
+.navbar__onLight {
+  background-color: $white-text;
 }
 .nav {
   display: none;
   @include breakpoint('tablet') {
     display: flex;
   }
+  @include breakpoint('desktop') {
+    margin-left: 35px;
+  }
+}
+.search-btn {
+  @include breakpoint('desktop') {
+    margin-left: auto !important;
+  }
+}
+.navbar-btn {
+  @include breakpoint('desktop') {
+    margin-left: 42px;
+  }
 }
 .nav-link {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Poppins-Medium', sans-serif;
   font-size: 16px;
-  color: $primary;
+  line-height: 30px;
+  color: $text-grey !important;
   margin: 0 1.5rem;
   padding: 0.25rem 0;
   border-bottom: 2px solid transparent;
-  transition: all 0.3s ease-in-out;
   &:hover {
     border-bottom: 2px solid $primary;
-    color: $primary;
+    color: $text-dark !important;
   }
 }
 .open-icon {
@@ -31,3 +46,14 @@
     display: none;
   }
 }
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 36px !important;
+  @include breakpoint('desktop') {
+    padding: 0 100px !important;
+  }
+}
+

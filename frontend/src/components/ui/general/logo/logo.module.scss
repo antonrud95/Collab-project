@@ -1,6 +1,12 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
 .root {
   display: flex;
-  height: 35px;
+  height: 28px;
+  @include breakpoint('mobile') {
+    height: 40px;
+  }
 }
 .main-logo {
   height: 100%;

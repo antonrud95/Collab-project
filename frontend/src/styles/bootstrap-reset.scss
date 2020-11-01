@@ -1,11 +1,24 @@
 @import 'mixins';
 
 .container {
-  padding-left: 15px !important;
-  padding-right: 15px !important;
-  @media (min-width: 1200px) {
-    max-width: 1200px;
+  padding-left: 32px !important;
+  padding-right: 32px !important;
+  max-width: 100% !important;
+  @media (min-width: 768px) {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
   }
+  @media (min-width: 1024px) {
+    padding-left: 72px !important;
+    padding-right: 72px !important;
+  }
+  @media (min-width: 1200px) {
+    padding: 0 !important;
+    max-width: 1200px !important;
+  }
+}
+.container-fluid {
+  padding: 0 !important;
 }
 .dropdown-toggle {
   &:after {
@@ -20,3 +33,44 @@
     left: -300%;
   }
 }
+
+.slick-prev {
+  left: 0 !important;
+  @include breakpoint ('tablet') {
+    left: -185px !important;
+  }
+}
+.slick-next {
+  left: 57px !important;
+  @include breakpoint ('tablet') {
+    left: -128px !important;
+  }
+}
+
+.slick-prev,
+.slick-next {
+  top: -85px !important;
+  width: 40px !important;
+  height: 40px !important;
+  opacity: 1 !important;
+  transform: translate(0) !important;
+  color: #5956E9 !important;
+  outline: none !important;
+  z-index: 1000 !important;
+  @include breakpoint ('tablet') {
+    top: calc(100% - 40px) !important;
+  }
+}
+
+.slick-prev:before, 
+.slick-next:before {
+  color: #5956E9 !important;
+  opacity: 1 !important;
+  font-size: 40px !important;
+}
+.slick-prev.slick-disabled:before, 
+.slick-next.slick-disabled:before {
+  color: #5956E9 !important;
+  opacity: 0.3 !important;
+}
+
