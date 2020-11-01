@@ -10,10 +10,11 @@ import AdvantagesSection from '~/components/sections/advantages-section/advantag
 import PrototyingSection from '~/components/sections/prototying-section/prototying-section.component'
 import PlanSection from '~/components/sections/plan-section/plan-section.component'
 import EffortlessSection from '~/components/sections/effortless-section/effortless-section.component'
+import CreatedSection from '~/components/sections/created-section/created-section.component'
 
 const IndexPage = ({ data }) => (
   <Layout>
-    <SEO title="Unikorns Starter Kit" />
+    <SEO title="Collab" />
     <HeroSection heroes={data.allStrapiHeroes.nodes} />
     <FeaturesSection />
     <SignupSection />
@@ -21,6 +22,7 @@ const IndexPage = ({ data }) => (
     <PrototyingSection />
     <PlanSection />
     <EffortlessSection effortlesses={data.allStrapiEffortless.nodes} />
+    <CreatedSection />
   </Layout>
 )
 export const query = graphql`
