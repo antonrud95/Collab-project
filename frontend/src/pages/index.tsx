@@ -7,6 +7,7 @@ import HeroSection from '~/components/sections/hero-section/hero-section.compone
 import FeaturesSection from '~/components/sections/features-section/features-section.component'
 import SignupSection from '~/components/sections/signup-section/signup-section.component'
 import AdvantagesSection from '~/components/sections/advantages-section/advantages-section.component'
+import PrototyingSection from '~/components/sections/prototying-section/prototying-section.component'
 
 const IndexPage = ({ data }) => (
   <Layout>
@@ -15,6 +16,7 @@ const IndexPage = ({ data }) => (
     <FeaturesSection />
     <SignupSection />
     <AdvantagesSection />
+    <PrototyingSection />
   </Layout>
 )
 export const query = graphql`

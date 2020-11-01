@@ -1,0 +1,230 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.container-outer {
+    position: relative !important;
+}
+
+.bg-container {
+    background: linear-gradient(90deg, #ECF2F6 0%, rgba(236, 242, 246, 0) 70.31%);
+    border-radius: 40px;
+    min-height: 500px;
+    padding: 0 15px;
+    @include breakpoint('mobile') {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+.bg-container-content {
+    padding-top: 358px;
+    padding-bottom: 80px;
+    @include breakpoint('mobile') {
+        padding-top: 105px;
+        padding-bottom: 143px;
+    }
+}
+.container-inner {
+    position: relative !important;
+    padding: 0 16px !important;
+    max-width: 100% !important;
+    @include breakpoint('desktop') {
+        padding: 15px !important;
+        max-width: 1200px !important;
+        margin: 0 auto;
+        &:after {
+            content: '';
+            position: absolute;
+            width: 90px;
+            height: 90px;
+            right: 0px;
+            top: -30px;
+            border-radius: 50%;
+            background-color: $primary;
+        }
+    }
+}
+
+.proto-image-wrapper {
+    width: 100% !important;
+    min-height: 750px;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    overflow: hidden;
+    z-index: 1000;
+    .ornament-first {
+        display: block;
+        &:before {
+            content: '';
+            width: 252px;
+            height: 252px;
+            background-color: $pink-balls;
+            border-radius: 50%;
+            position: absolute;
+            top: 25px;
+            right: 60px;
+            @include breakpoint('tablet') {
+                width: 410px;
+                height: 410px;
+                right: 190px;
+                top: 60px;
+            }
+            
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            top: 65px;
+            right: 271px;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background-color: $primary;
+            @include breakpoint('tablet') {
+                display: none;
+            }
+        }
+    }
+    .ornament-second {
+        display: block;
+        &:before {
+            content: '';
+            width: 12px;
+            height: 12px;
+            background-color: $pink-balls;
+            border-radius: 50%;
+            position: absolute;
+            top: 30px;
+            right: 320px;
+            @include breakpoint('tablet') {
+                width: 48px;
+                height: 48px;
+                top: 0;
+                left: 443px;
+            }
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            top: 30px;
+            right: 45px;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background-color: $yellow-balls;
+            @include breakpoint('tablet') {
+                width: 130px;
+                height: 130px;
+                left: 240px;
+                top: 520px;
+            }
+            @include breakpoint('desktop') {
+                width: 130px;
+                height: 130px;
+                left: 400px;
+                top: 555px;
+            }
+        }
+    }
+    .ornament-third {
+        display: block;
+        &:before {
+            content: '';
+            width: 16px;
+            height: 16px;
+            background-color: $pink-balls;
+            border-radius: 50%;
+            position: absolute;
+            top: 285px;
+            right: 100px;
+            @include breakpoint('tablet') {
+                display: none;
+            }
+            @include breakpoint('desktop') {
+                display: block;
+                width: 24px;
+                height: 24px;
+                right: 26px;
+                top: 140px;
+            }
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            top: 90px;
+            right: 40px;
+            width: 150px;
+            height: 1px;
+            transform: rotate(-45deg);
+            background-color: #fff;
+            @include breakpoint('tablet') {
+                right: 170px;
+                top: 200px;
+                width: 300px;
+            }
+        }
+    }
+}
+
+.hand-image {
+    width: 320px;
+    position: absolute !important;
+    top: 0 !important;
+    right: -70px !important;
+    z-index: 1000 !important;
+    @include breakpoint('tablet') {
+        width: 520px;
+        right: -25px !important;
+    }
+}
+
+.proto-btn-styles {
+    margin: 0 auto;
+    @include breakpoint('mobile') {
+        margin: 0 0 0 38px;
+    }
+    @include breakpoint('desktop') {
+        margin: 0 0 0 100px;
+    }
+}
+
+.bg-container-content-title {
+    font-family: 'DMSans-Medium', sans-serif;
+    font-size: 48px;
+    line-height: 48px;
+    text-align: center;
+    margin-bottom: 32px;
+    color: $text-dark;
+    @include breakpoint('mobile') {
+        text-align: left;
+        padding-left: 38px;
+    }
+    @include breakpoint('tablet') {
+        font-size: 68px;
+        line-height: 68px;
+        padding-left: 38px;
+    }
+    @include breakpoint('desktop') {
+        font-size: 80px;
+        line-height: 80px;
+        padding-left: 100px;
+    }
+}
+.bg-container-content-text {
+    font-family: 'DMSans-Medium', sans-serif;
+    font-size: 15px;
+    line-height: 24px;
+    text-align: center;
+    margin-bottom: 32px;
+    color: $text-grey;
+    @include breakpoint('mobile') {
+        text-align: left;
+        padding-left: 38px;
+    }
+    @include breakpoint('tablet') {
+        width: 80%;
+    }
+    @include breakpoint('desktop') {
+        padding-left: 100px;
+    }
+}
