@@ -1,0 +1,261 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.plan-section-wrapper {
+    padding-top: 75px !important;
+    .plan-section-header {
+        text-align: center;
+    }
+    .plan-section-header-upper-title {
+        font-family: 'DMSans-Bold', sans-serif;
+        font-size: 20px;
+        line-height: 20px;
+        color: $text-dark;
+        margin-bottom: 16px;
+    }
+    .plan-section-header-title {
+        font-family: 'DMSans-Medium', sans-serif;
+        font-size: 80px;
+        line-height: 80px;
+        color: $text-dark;
+        margin-bottom: 31px;
+        .title-text-colored,
+        .title-dot-colored {
+            color: $primary;
+        }
+    }
+    .plan-section-header-text {
+        font-family: 'Poppins-Regular', sans-serif;
+        font-size: 18px;
+        line-height: 27px;
+        color: $text-grey;
+        margin-bottom: 34px;
+        position: relative;
+        &:after {
+            content: '';
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 49px;
+            height: 49px;
+            background-color: $pink-balls;
+            border-radius: 50%;
+        }
+    }
+}
+
+.plan-cards-container {
+    justify-content: space-between;
+    max-width: 876px;
+    margin: 0 auto;
+    @include breakpoint('mobile') {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    @include breakpoint('desktop') {
+        max-width: 1040px;
+    }
+    .plan-item-wrapper {
+        margin: 0 auto 25px auto;
+        border: 1px solid #E3E6E9;
+        border-radius: 32px;
+        transition: 0.2s ease-in-out;
+        @include breakpoint('tablet') {
+            max-width: 277px !important;
+        }
+        @include breakpoint('desktop') {
+            max-width: 320px !important;
+        }
+        .plan-item-wrapper-header {
+            position: relative;
+            .header-title-styles {
+                padding-left: 62px;
+                @include breakpoint('desktop') {
+                    padding-left: 78px;
+                }
+            }
+        }
+        .header-title-styles {
+            font-family: 'Poppins-Regular', sans-serif;
+            font-size: 14px;
+            line-height: 21px;
+            color: $text-dark;
+            margin-bottom: 6px;
+            padding: 24px 0 0 24px;
+            @include breakpoint('desktop') {
+                padding: 42px 0 0 42px;
+            }
+        }
+        .plan-item-title {
+            font-family: 'DMSans-Medium', sans-serif;
+            font-size: 40px;
+            line-height: 40px;
+            color: $text-dark;
+            margin-bottom: 20px;
+            padding-left: 24px;
+            @include breakpoint('desktop') {
+                padding-left: 42px;
+            }
+        }
+        .price-wrapper {
+            display: flex;
+            align-items: center;
+            margin-bottom: 45px;
+            padding-left: 24px;
+            @include breakpoint('desktop') {
+                padding-left: 42px;
+            }
+            .price-colored {
+                font-family: 'Poppins-Medium', sans-serif;
+                font-size: 20px;
+                line-height: 22px;
+                color: $primary;
+                padding-right: 8px;
+                margin-bottom: 0;
+            }
+            .price-grey {
+                font-family: 'Poppins-Medium', sans-serif;
+                font-size: 14px;
+                line-height: 14px;
+                color: $text-grey;
+                margin-bottom: 0;
+            }
+        }
+        .price-desc-wrapper {
+            display: flex;
+            margin-bottom: 24px;
+            padding-left: 24px;
+            @include breakpoint('desktop') {
+                padding-left: 42px;
+            }
+            .description-styles {
+                font-family: 'Poppins-Regular', sans-serif;
+                font-size: 16px;
+                line-height: 24px;
+                color: $text-grey;
+                margin-bottom: 0;
+                @include breakpoint('desktop') {
+                    width: 75%;
+                }
+            }
+        }
+    }
+}
+
+.image-box {
+    min-width: 24px;
+    margin-right: 12px;
+}
+.box-styles {
+    width: 24px;
+    height: 24px;
+}
+
+.button-styles {
+    margin: 0 auto;
+    margin-bottom: 21px;
+    color: $text-dark;
+    @include breakpoint('desktop') {
+        margin-bottom: 41px;
+    }
+}
+
+.plan-item-header-logo {
+    display: block;
+    &:before {
+        content: '';
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: $pink-balls;
+        position: absolute;
+        left: 26px;
+        top: 26px;
+        @include breakpoint('desktop') {
+            left: 42px;
+            top: 42px;
+        }
+    }
+}
+
+.plan-item-wrapper {
+    position: relative;
+    &:hover {
+        background-color: $primary;
+        .header-title-styles,
+        .plan-item-title,
+        .price-colored,
+        .description-styles {
+            color: $white-text !important;
+        }
+        .button-styles {
+            color: $primary !important;
+            background-color: $white-text;
+        }
+        .plan-item-header-logo {
+            &:before {
+                background-color: $white-text;
+                opacity: .5;
+            }
+        }
+    }
+    &:hover:after {
+        content: '';
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background-color: $yellow-balls;
+        position: absolute;
+        right: 8px;
+        top: 8px;
+        @include breakpoint('desktop') {
+            width: 48px;
+            height: 48px;;
+        }
+    }
+}
+
+.checkbox-styles {
+    position: relative;
+    width: 56px;
+    height: 24px;
+    appearance: none;
+    background: #c6c6c6;
+    outline: none;
+    border-radius: 20px;
+    transition: .5s;
+    &:before {
+        content: '';
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        border-radius: 20px;
+        top: 0;
+        left: 0;
+        background: #fff;
+        transition: .5s;
+        transform: scale(0.8);
+    }
+}
+.checkbox-styles:checked {
+    background: $primary;
+    &:before {
+        left: 32px;
+    }
+}
+
+.plan-checkbox-wrapper {
+    margin-bottom: 72px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .checkbox-text-first,
+    .checkbox-text-second {
+        font-family: 'Poppins-Medium', sans-serif;
+        font-size: 16px;
+        line-height: 13px;
+        margin-bottom: 0;
+        color: $text-grey;
+        margin: 0 24px;
+    }
+}

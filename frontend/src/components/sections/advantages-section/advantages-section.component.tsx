@@ -6,6 +6,7 @@ import SInput from '~/components/ui/general/input/input.component'
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 
+import SendingMailLogo from '~/assets/icons/advantages/sending-mail.svg'
 import IconFirst from '~/assets/icons/advantages/icon-first.svg'
 import IconSecond from '~/assets/icons/advantages/icon-second.svg'
 import IconThird from '~/assets/icons/advantages/icon-third.svg'
@@ -37,7 +38,13 @@ const AdvantagesSection = () => {
             Ready to get started?{<br />}Sign up with your email
           </h3>
           <div className={styles.inputFormStyles}>
-            <SInput />
+            <SInput
+              type={'text'}
+              children={<SendingMailLogo className={styles.inputLogoStyles} />}
+              placeholder={'Email address'}
+              inputWrapper={styles.inputWrapper}
+              inputStyles={styles.inputStyles}
+            />
             <SButton variant="hero" className={styles.advantagesButton}>
               Get started
             </SButton>

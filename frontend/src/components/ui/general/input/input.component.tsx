@@ -1,13 +1,32 @@
 import React from 'react'
-import styles from './input.module.scss'
+import FC from '~/types/fc'
 
-import SendingMailLogo from '~/assets/icons/advantages/sending-mail.svg'
+interface Props {
+  children?: any
+  placeholder?: string
+  inputStyles: string
+  inputWrapper: string
+  type: string
+  change?: any
+}
 
-const SInput = () => {
+const SInput: FC<Props> = ({
+  children,
+  placeholder,
+  inputStyles,
+  inputWrapper,
+  type,
+  change,
+}) => {
   return (
-    <div className={styles.inputWrapper}>
-      <SendingMailLogo className={styles.inputLogoStyles} />
-      <input placeholder="Email address" className={styles.inputStyles} />
+    <div className={inputWrapper}>
+      {children}
+      <input
+        type={type}
+        placeholder={placeholder}
+        className={inputStyles}
+        onChange={change}
+      />
     </div>
   )
 }
