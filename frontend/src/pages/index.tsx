@@ -5,12 +5,14 @@ import Layout from '~/components/layout'
 import SEO from '~/components/seo.component'
 import HeroSection from '~/components/sections/hero-section/hero-section.component'
 import FeaturesSection from '~/components/sections/features-section/features-section.component'
+import SignupSection from '~/components/sections/signup-section/signup-section.component'
 
 const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="Unikorns Starter Kit" />
     <HeroSection heroes={data.allStrapiHeroes.nodes} />
     <FeaturesSection />
+    <SignupSection />
   </Layout>
 )
 export const query = graphql`
