@@ -1,9 +1,9 @@
 @import 'src/styles/variables';
 @import 'src/styles/mixins';
 
-// .container-outer {
-//     background-color: $text-grey;
-// }
+.container-outer {
+    background-color: #f0f0f0;
+}
 
 .container-inner {
     overflow: hidden !important;
@@ -11,6 +11,15 @@
 
 .image-wrapper {
     transform: rotate(-30deg);
+}
+
+.image-wrapper-upper {
+    transform: translateX(50%);
+    margin-bottom: 40px;
+    
+}
+.image-wrapper-lower {
+    transform: translateX(-100%)
 }
 
 .image-wrapper-upper,

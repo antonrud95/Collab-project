@@ -25,46 +25,76 @@ const CreatedSection = () => {
       }
     }
   `)
+
+  const [scrollY, setScrollY] = useState(0)
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY)
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  const [{ springscrollY }, springsetScrollY] = useSpring(() => ({
+    springscrollY: 0,
+  }))
+
+  const STEP = 8
+  springsetScrollY({ springscrollY: scrollY })
+  const interpHeader = springscrollY.interpolate(
+    (o) => `translateX(-${o / STEP}px)`
+  )
+  const interpHeaderSecond = springscrollY.interpolate(
+    (o) => `translateX(${o / STEP}px)`
+  )
   return (
     <Container fluid className={styles.containerOuter}>
       <Container className={styles.containerInner}>
         <div className={styles.imageWrapper}>
-          <div className={styles.imageWrapperUpper}>
-            <Img
-              fluid={data.item1.childImageSharp.fluid}
-              className={styles.imageStyles}
-            />
-            <Img
-              fluid={data.item2.childImageSharp.fluid}
-              className={styles.imageStyles}
-            />
-            <Img
-              fluid={data.item1.childImageSharp.fluid}
-              className={styles.imageStyles}
-            />
-            <Img
-              fluid={data.item2.childImageSharp.fluid}
-              className={styles.imageStyles}
-            />
-          </div>
-          <div className={styles.imageWrapperLower}>
-            <Img
-              fluid={data.item2.childImageSharp.fluid}
-              className={styles.imageStyles}
-            />
-            <Img
-              fluid={data.item1.childImageSharp.fluid}
-              className={styles.imageStyles}
-            />
-            <Img
-              fluid={data.item2.childImageSharp.fluid}
-              className={styles.imageStyles}
-            />
-            <Img
-              fluid={data.item1.childImageSharp.fluid}
-              className={styles.imageStyles}
-            />
-          </div>
+          <animated.div
+            className={styles.scrollableWrapper}
+            style={{ transform: interpHeader }}
+          >
+            <div className={styles.imageWrapperUpper}>
+              <Img
+                fluid={data.item1.childImageSharp.fluid}
+                className={styles.imageStyles}
+              />
+              <Img
+                fluid={data.item2.childImageSharp.fluid}
+                className={styles.imageStyles}
+              />
+              <Img
+                fluid={data.item1.childImageSharp.fluid}
+                className={styles.imageStyles}
+              />
+              <Img
+                fluid={data.item2.childImageSharp.fluid}
+                className={styles.imageStyles}
+              />
+            </div>
+          </animated.div>
+          <animated.div
+            className={styles.scrollableWrapper}
+            style={{ transform: interpHeaderSecond }}
+          >
+            <div className={styles.imageWrapperLower}>
+              <Img
+                fluid={data.item2.childImageSharp.fluid}
+                className={styles.imageStyles}
+              />
+              <Img
+                fluid={data.item1.childImageSharp.fluid}
+                className={styles.imageStyles}
+              />
+              <Img
+                fluid={data.item2.childImageSharp.fluid}
+                className={styles.imageStyles}
+              />
+              <Img
+                fluid={data.item1.childImageSharp.fluid}
+                className={styles.imageStyles}
+              />
+            </div>
+          </animated.div>
         </div>
       </Container>
     </Container>
