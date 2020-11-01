@@ -1,2 +1,27 @@
 @import 'src/styles/variables';
 @import 'src/styles/mixins';
+
+// .container-outer {
+//     background-color: $text-grey;
+// }
+
+.container-inner {
+    overflow: hidden !important;
+}
+
+.image-wrapper {
+    transform: rotate(-30deg);
+}
+
+.image-wrapper-upper,
+.image-wrapper-lower {
+    display: flex;
+}
+
+.image-styles {
+    min-width: 375px;
+}
+
+.image-styles {
+    margin-right: 70px;
+}
