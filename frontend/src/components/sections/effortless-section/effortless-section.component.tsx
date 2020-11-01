@@ -13,6 +13,8 @@ import FC from '~/types/fc'
 import { useWindowDimensions } from '~/helpers/useWindowDimensions.helper'
 import { EffortlessType } from '~/types/effortless.type'
 
+import FadeUpWrapper from '~/components/ui/fade-wrapper/fade-wrapper.component'
+
 interface Props {
   effortlesses: EffortlessType[]
 }
@@ -51,7 +53,9 @@ const EffortlessSection: FC<Props> = ({ effortlesses }) => {
           <span className={styles.ornamentSecond} />
           {width > 767 && (
             <div className={styles.effortsImage}>
-              <Img fluid={data.lamp.childImageSharp.fluid} />
+              <FadeUpWrapper>
+                <Img fluid={data.lamp.childImageSharp.fluid} />
+              </FadeUpWrapper>
             </div>
           )}
         </Col>

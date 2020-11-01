@@ -6,6 +6,8 @@ import SimpleSlider from '~/components/ui/features-carousel/features-carousel.co
 import SliderItem from '~/components/ui/features-carousel-item/features-carousel-item.component'
 import styles from './features-section.module.scss'
 
+import FadeUpWrapper from '~/components/ui/fade-wrapper/fade-wrapper.component'
+
 const FeaturesSection = () => {
   const data = useStaticQuery(graphql`
     query {
@@ -38,17 +40,21 @@ const FeaturesSection = () => {
         <Container>
           <Row className={styles.featuresHeader}>
             <Col xs="12" md="3">
-              <h3 className={styles.uppertitle}>Features</h3>
+              <FadeUpWrapper>
+                <h3 className={styles.uppertitle}>Features</h3>
+              </FadeUpWrapper>
             </Col>
             <Col xs="12" md="9">
               <div className={styles.mainContent}>
-                <h2 className={styles.mainContentTitle}>
-                  The world’s most powerful design tool.
-                </h2>
-                <p className={styles.mainContentText}>
-                  Simultaneously design, code and collaborate with your team all
-                  from one place.
-                </p>
+                <FadeUpWrapper>
+                  <h2 className={styles.mainContentTitle}>
+                    The world’s most powerful design tool.
+                  </h2>
+                  <p className={styles.mainContentText}>
+                    Simultaneously design, code and collaborate with your team
+                    all from one place.
+                  </p>
+                </FadeUpWrapper>
               </div>
             </Col>
           </Row>

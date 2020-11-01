@@ -11,6 +11,8 @@ import IconFirst from '~/assets/icons/advantages/icon-first.svg'
 import IconSecond from '~/assets/icons/advantages/icon-second.svg'
 import IconThird from '~/assets/icons/advantages/icon-third.svg'
 
+import FadeUpWrapper from '~/components/ui/fade-wrapper/fade-wrapper.component'
+
 import { useWindowDimensions } from '~/helpers/useWindowDimensions.helper'
 
 import styles from './advantages-section.module.scss'
@@ -34,9 +36,11 @@ const AdvantagesSection = () => {
     <div className={styles.advantagesOuter}>
       <Container>
         <div className={styles.signupSectionForm}>
-          <h3 className={styles.signupSectionTitle}>
-            Ready to get started?{<br />}Sign up with your email
-          </h3>
+          <FadeUpWrapper>
+            <h3 className={styles.signupSectionTitle}>
+              Ready to get started?{<br />}Sign up with your email
+            </h3>
+          </FadeUpWrapper>
           <div className={styles.inputFormStyles}>
             <SInput
               type={'text'}
@@ -53,36 +57,38 @@ const AdvantagesSection = () => {
       </Container>
       <Container fluid className={styles.mainContainerFluid}>
         <Container className={styles.advantagesContent}>
-          <div>
-            <h3 className={styles.advantagesTitle}>Auto Adaptive layouts</h3>
-            <p className={styles.advantagesText}>Responsive{<br />}DNA.</p>
-            <p className={styles.advantagesDescription}>
-              Easily create truly responsive components while deploying
-              production-ready code.
-            </p>
-            <div className={styles.iconWrapper}>
-              <div className={styles.iconStylesWrapper}>
-                <IconFirst />
-              </div>
-              <p className={styles.iconWrapperText}>Advanced pinning</p>
-            </div>
-            <div className={styles.iconWrapper}>
-              <div className={styles.iconStylesWrapper}>
-                <IconSecond />
-              </div>
-              <p className={styles.iconWrapperText}>
-                Relative positioning with containers
+          <FadeUpWrapper>
+            <div>
+              <h3 className={styles.advantagesTitle}>Auto Adaptive layouts</h3>
+              <p className={styles.advantagesText}>Responsive{<br />}DNA.</p>
+              <p className={styles.advantagesDescription}>
+                Easily create truly responsive components while deploying
+                production-ready code.
               </p>
-            </div>
-            <div className={styles.iconWrapper}>
-              <div className={styles.iconStylesWrapper}>
-                <IconThird />
+              <div className={styles.iconWrapper}>
+                <div className={styles.iconStylesWrapper}>
+                  <IconFirst />
+                </div>
+                <p className={styles.iconWrapperText}>Advanced pinning</p>
               </div>
-              <p className={styles.iconWrapperText}>
-                Percentage-based geometry
-              </p>
+              <div className={styles.iconWrapper}>
+                <div className={styles.iconStylesWrapper}>
+                  <IconSecond />
+                </div>
+                <p className={styles.iconWrapperText}>
+                  Relative positioning with containers
+                </p>
+              </div>
+              <div className={styles.iconWrapper}>
+                <div className={styles.iconStylesWrapper}>
+                  <IconThird />
+                </div>
+                <p className={styles.iconWrapperText}>
+                  Percentage-based geometry
+                </p>
+              </div>
             </div>
-          </div>
+          </FadeUpWrapper>
           {width > 1200 && (
             <div className={styles.advantagesImageWrapper}>
               <Img

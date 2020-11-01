@@ -8,6 +8,8 @@ import SButton from '~/components/ui/general/button/button.component'
 
 import styles from './created-section.module.scss'
 
+import FadeUpWrapper from '~/components/ui/fade-wrapper/fade-wrapper.component'
+
 const CreatedSection = () => {
   const data = useStaticQuery(graphql`
     query {
@@ -50,20 +52,22 @@ const CreatedSection = () => {
   return (
     <Container fluid className={styles.containerOuter}>
       <Container className={styles.containerUpper}>
-        <h3 className={styles.uppertitle}>Showcase</h3>
-        <h2 className={styles.title}>
-          Created with
-          <br />
-          Collab.
-        </h2>
-        <p className={styles.text}>
-          See what designers around the world are
-          <br />
-          building with Collab.
-        </p>
-        <SButton variant="hero" className={styles.button}>
-          View More Projects
-        </SButton>
+        <FadeUpWrapper>
+          <h3 className={styles.uppertitle}>Showcase</h3>
+          <h2 className={styles.title}>
+            Created with
+            <br />
+            Collab.
+          </h2>
+          <p className={styles.text}>
+            See what designers around the world are
+            <br />
+            building with Collab.
+          </p>
+          <SButton variant="hero" className={styles.button}>
+            View More Projects
+          </SButton>
+        </FadeUpWrapper>
       </Container>
       <Container className={styles.containerInner}>
         <div className={styles.imageWrapper}>

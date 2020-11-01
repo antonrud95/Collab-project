@@ -8,6 +8,8 @@ import WorkIcon from '~/assets/icons/hero/work-icon.svg'
 import ScrollIcon from '~/assets/icons/hero/scroll-icon.svg'
 import { useWindowDimensions } from '~/helpers/useWindowDimensions.helper'
 
+import FadeUpWrapper from '~/components/ui/fade-wrapper/fade-wrapper.component'
+
 import styles from './hero-section.module.scss'
 import Img from 'gatsby-image'
 
@@ -22,14 +24,16 @@ const HeroSection: FC<Props> = ({ heroes }) => {
       <Container className={styles.heroContainer}>
         <div className={styles.heroBlock}>
           <div className={styles.heroContent}>
-            <DescriptionComponent
-              key={heroes[0].id}
-              title={heroes[0].title}
-              description={heroes[0].subtitle}
-              descriptionComponentWrapper={styles.descriptionComponent}
-              titleClassname={styles.descriptionTitle}
-              textClassname={styles.descriptionText}
-            />
+            <FadeUpWrapper>
+              <DescriptionComponent
+                key={heroes[0].id}
+                title={heroes[0].title}
+                description={heroes[0].subtitle}
+                descriptionComponentWrapper={styles.descriptionComponent}
+                titleClassname={styles.descriptionTitle}
+                textClassname={styles.descriptionText}
+              />
+            </FadeUpWrapper>
             {width > 1023 && (
               <div className={styles.imageWrapper}>
                 <Img
@@ -39,7 +43,6 @@ const HeroSection: FC<Props> = ({ heroes }) => {
               </div>
             )}
           </div>
-
           <div className={styles.buttonWrapper}>
             <SButton variant="primary" className={styles.firstBtn}>
               Get started

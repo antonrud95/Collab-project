@@ -6,6 +6,8 @@ import Img from 'gatsby-image'
 import { useWindowDimensions } from '~/helpers/useWindowDimensions.helper'
 import styles from './signup-section.module.scss'
 
+import FadeUpWrapper from '~/components/ui/fade-wrapper/fade-wrapper.component'
+
 const SignupSection = () => {
   const { width } = useWindowDimensions()
   const data = useStaticQuery(graphql`
@@ -36,9 +38,24 @@ const SignupSection = () => {
       </div>
       <Container className={styles.signupInnerContainer}>
         <div className={styles.signupTabletWrapper}>
-          <Img fluid={data.imageTablet.childImageSharp.fluid} />
-          {width > 767 &&  <Img fluid={data.cloud.childImageSharp.fluid} className={styles.cloudLeftStyles}/>}
-          <Img fluid={data.cloud.childImageSharp.fluid} className={styles.cloudStyles}/>
+          <FadeUpWrapper>
+            <Img fluid={data.imageTablet.childImageSharp.fluid} />
+          </FadeUpWrapper>
+
+          {width > 767 && (
+            <FadeUpWrapper>
+              <Img
+                fluid={data.cloud.childImageSharp.fluid}
+                className={styles.cloudLeftStyles}
+              />
+            </FadeUpWrapper>
+          )}
+          <FadeUpWrapper>
+            <Img
+              fluid={data.cloud.childImageSharp.fluid}
+              className={styles.cloudStyles}
+            />
+          </FadeUpWrapper>
         </div>
         <span className={styles.centerOrnament} />
         <span className={styles.centerInnerOrnament} />

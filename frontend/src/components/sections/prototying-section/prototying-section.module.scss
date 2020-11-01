@@ -63,6 +63,7 @@
             position: absolute;
             top: 25px;
             right: 60px;
+            z-index: -1 !important;
             @include breakpoint('tablet') {
                 width: 410px;
                 height: 410px;
@@ -157,6 +158,7 @@
             height: 1px;
             transform: rotate(-45deg);
             background-color: #fff;
+            z-index: -1 !important;
             @include breakpoint('tablet') {
                 right: 170px;
                 top: 200px;

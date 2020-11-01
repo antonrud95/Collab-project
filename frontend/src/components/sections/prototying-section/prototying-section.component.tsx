@@ -7,6 +7,7 @@ import Img from 'gatsby-image'
 import SButton from '~/components/ui/general/button/button.component'
 
 import { useWindowDimensions } from '~/helpers/useWindowDimensions.helper'
+import FadeUpWrapper from '~/components/ui/fade-wrapper/fade-wrapper.component'
 
 import styles from './prototying-section.module.scss'
 
@@ -28,10 +29,12 @@ const PrototyingSection = () => {
       <Container fluid className={styles.containerOuter}>
         {width < 1441 && (
           <div className={styles.protoImageWrapper}>
-            <Img
-              fluid={data.thumbUp.childImageSharp.fluid}
-              className={styles.handImage}
-            />
+            <FadeUpWrapper>
+              <Img
+                fluid={data.thumbUp.childImageSharp.fluid}
+                className={styles.handImage}
+              />
+            </FadeUpWrapper>
             <span className={styles.ornamentFirst} />
             <span className={styles.ornamentSecond} />
             <span className={styles.ornamentThird} />
@@ -57,10 +60,12 @@ const PrototyingSection = () => {
             </div>
             {width > 1440 && (
               <div className={styles.protoImageWrapper}>
-                <Img
-                  fluid={data.thumbUp.childImageSharp.fluid}
-                  className={styles.handImage}
-                />
+                <FadeUpWrapper>
+                  <Img
+                    fluid={data.thumbUp.childImageSharp.fluid}
+                    className={styles.handImage}
+                  />
+                </FadeUpWrapper>
                 <span className={styles.ornamentFirst} />
                 <span className={styles.ornamentSecond} />
                 <span className={styles.ornamentThird} />
