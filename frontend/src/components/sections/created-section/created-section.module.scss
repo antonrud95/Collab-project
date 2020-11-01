@@ -14,12 +14,24 @@
 }
 
 .image-wrapper-upper {
-    transform: translateX(50%);
+    transform: translateX(200%);
     margin-bottom: 40px;
-    
+    @include breakpoint('mobile-medium') {
+        transform: translateX(100%);
+    }
+    @include breakpoint('tablet') {
+        transform: translateX(50%);
+    }
 }
 .image-wrapper-lower {
-    transform: translateX(-100%)
+    transform: translateX(-450%);
+    @include breakpoint('mobile-medium') {
+        transform: translateX(-250%);
+    }
+    @include breakpoint('tablet') {
+        transform: translateX(-150%);
+    }
+    
 }
 
 .image-wrapper-upper,
@@ -28,9 +40,11 @@
 }
 
 .image-styles {
-    min-width: 375px;
+    min-width: 250px;
+    @include breakpoint('mobile-medium') {
+        min-width: 375px;
+    }
 }
-
 .image-styles {
-    margin-right: 70px;
+    margin-right: 20px;
 }

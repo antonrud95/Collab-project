@@ -70,6 +70,22 @@ const CreatedSection = () => {
                 fluid={data.item2.childImageSharp.fluid}
                 className={styles.imageStyles}
               />
+              <Img
+                fluid={data.item1.childImageSharp.fluid}
+                className={styles.imageStyles}
+              />
+              <Img
+                fluid={data.item2.childImageSharp.fluid}
+                className={styles.imageStyles}
+              />
+              <Img
+                fluid={data.item1.childImageSharp.fluid}
+                className={styles.imageStyles}
+              />
+              <Img
+                fluid={data.item2.childImageSharp.fluid}
+                className={styles.imageStyles}
+              />
             </div>
           </animated.div>
           <animated.div
@@ -77,6 +93,22 @@ const CreatedSection = () => {
             style={{ transform: interpHeaderSecond }}
           >
             <div className={styles.imageWrapperLower}>
+              <Img
+                fluid={data.item2.childImageSharp.fluid}
+                className={styles.imageStyles}
+              />
+              <Img
+                fluid={data.item1.childImageSharp.fluid}
+                className={styles.imageStyles}
+              />
+              <Img
+                fluid={data.item2.childImageSharp.fluid}
+                className={styles.imageStyles}
+              />
+              <Img
+                fluid={data.item1.childImageSharp.fluid}
+                className={styles.imageStyles}
+              />
               <Img
                 fluid={data.item2.childImageSharp.fluid}
                 className={styles.imageStyles}
